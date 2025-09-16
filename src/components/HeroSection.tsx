@@ -1,17 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import heroImage from "@/assets/hero-hands-typing.jpg";
-
 const HeroSection = () => {
-  return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
-        <img
-          src={heroImage}
-          alt="Professional AI technology workspace"
-          className="w-full h-full object-cover"
-        />
+        <img src={heroImage} alt="Professional AI technology workspace" className="w-full h-full object-cover" />
         <div className="absolute inset-0 hero-gradient opacity-80" />
       </div>
 
@@ -26,24 +20,17 @@ const HeroSection = () => {
             NU.
           </h1>
           
-          <p className="text-xl md:text-2xl text-foreground/90 mb-8 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto leading-relaxed text-neutral-50">
             Start uw AI-reis met een betrouwbare partner
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button 
-              size="lg" 
-              className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-glow group"
-            >
+            <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-glow group">
               Ontdek onze expertise
               <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
             </Button>
             
-            <Button 
-              size="lg" 
-              variant="outline"
-              className="border-foreground/20 text-foreground hover:bg-foreground/10"
-            >
+            <Button size="lg" variant="outline" className="border-foreground/20 text-foreground hover:bg-foreground/10">
               Bekijk projecten
             </Button>
           </div>
@@ -56,8 +43,6 @@ const HeroSection = () => {
           <div className="w-1 h-3 bg-foreground/50 rounded-full mt-2 animate-pulse" />
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default HeroSection;
