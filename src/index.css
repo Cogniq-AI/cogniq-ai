@@ -98,7 +98,7 @@ All colors MUST be HSL.
     --input: 220 5% 90%;
     --ring: 217 91% 60%;
 
-    --hero-gradient: linear-gradient(135deg, hsl(0 0% 100%), hsl(220 5% 96%));
+    --hero-gradient: linear-gradient(135deg, transparent, transparent);
     --tech-gradient: linear-gradient(90deg, hsl(217 91% 60% / 0.05), hsl(25 95% 53% / 0.05));
     --card-gradient: linear-gradient(135deg, hsl(0 0% 100%), hsl(220 5% 98%));
     
