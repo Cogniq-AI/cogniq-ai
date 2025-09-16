@@ -41,7 +41,7 @@ const Footer = () => {
             {/* Company Info */}
             <div className="lg:col-span-2">
               <Link to="/" className="flex items-center space-x-2 mb-6">
-                <div className="text-3xl font-black gradient-text">Congiq AI</div>
+                <div className="text-3xl font-black gradient-text">Cogniq AI</div>
               </Link>
               <p className="text-muted-foreground mb-6 leading-relaxed">
                 {t('footer.description')}
@@ -59,7 +59,7 @@ const Footer = () => {
                 </div>
                 <div className="flex items-center text-sm text-muted-foreground">
                   <Mail className="h-4 w-4 mr-3 text-primary" />
-                  info@congiq-ai.com
+                  info@cogniq-ai.com
                 </div>
               </div>
             </div>

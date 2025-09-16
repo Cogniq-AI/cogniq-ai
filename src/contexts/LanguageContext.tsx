@@ -160,7 +160,7 @@ const translations = {
     'specializations.not.listed.cta': 'Bespreek uw project',
     
     // Footer
-    'footer.description': 'Congiq AI transformeert bedrijven met innovatieve AI-oplossingen. Van strategie tot implementatie, wij zijn uw betrouwbare partner in de AI-revolutie.',
+    'footer.description': 'Cogniq AI transformeert bedrijven met innovatieve AI-oplossingen. Van strategie tot implementatie, wij zijn uw betrouwbare partner in de AI-revolutie.',
     'footer.company': 'Bedrijf',
     'footer.services': 'Diensten',
     'footer.sectors': 'Sectoren',
@@ -180,7 +180,7 @@ const translations = {
     'footer.legal.terms': 'Algemene voorwaarden',
     'footer.legal.cookies': 'Cookies',
     'footer.legal.gdpr': 'GDPR',
-    'footer.copyright': '© 2024 Congiq AI. Alle rechten voorbehouden.',
+    'footer.copyright': '© 2024 Cogniq AI. Alle rechten voorbehouden.',
   },
   en: {
     // Navigation
@@ -331,7 +331,7 @@ const translations = {
     'specializations.not.listed.cta': 'Discuss your project',
     
     // Footer
-    'footer.description': 'Congiq AI transforms businesses with innovative AI solutions. From strategy to implementation, we are your trusted partner in the AI revolution.',
+    'footer.description': 'Cogniq AI transforms businesses with innovative AI solutions. From strategy to implementation, we are your trusted partner in the AI revolution.',
     'footer.company': 'Company',
     'footer.services': 'Services',
     'footer.sectors': 'Sectors',
@@ -351,7 +351,7 @@ const translations = {
     'footer.legal.terms': 'Terms and conditions',
     'footer.legal.cookies': 'Cookies',
     'footer.legal.gdpr': 'GDPR',
-    'footer.copyright': '© 2024 Congiq AI. All rights reserved.',
+    'footer.copyright': '© 2024 Cogniq AI. All rights reserved.',
   },
 };
 

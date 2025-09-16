@@ -101,10 +101,10 @@ const Career = () => {
         {/* Header */}
         <div className="text-center mb-16">
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              Carrière bij <span className="gradient-text">Congiq AI</span>
+              Carrière bij <span className="gradient-text">Cogniq AI</span>
             </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Word deel van een team dat de toekomst van AI vormgeeft. Bij Congiq AI combineren we technische excellentie met een geweldige werkcultuur.
+            Word deel van een team dat de toekomst van AI vormgeeft. Bij Cogniq AI combineren we technische excellentie met een geweldige werkcultuur.
           </p>
         </div>
 
@@ -113,7 +113,7 @@ const Career = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
             <h2 className="text-3xl font-bold mb-6">
-              Waarom werken bij <span className="gradient-text">Congiq AI</span>?
+              Waarom werken bij <span className="gradient-text">Cogniq AI</span>?
             </h2>
               <div className="space-y-4">
                 {workingAtB12.map((item, index) => (

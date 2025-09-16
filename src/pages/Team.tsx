@@ -86,7 +86,7 @@ const Team = () => {
           <div className="relative overflow-hidden rounded-2xl shadow-card">
             <img 
               src={teamImage} 
-              alt="Congiq AI team collaboration"
+              alt="Cogniq AI team collaboration"
               className="w-full h-96 object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/20 to-transparent" />
