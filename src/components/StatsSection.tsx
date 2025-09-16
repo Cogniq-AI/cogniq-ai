@@ -1,22 +1,25 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const StatsSection = () => {
+  const { t } = useLanguage();
+  
   const stats = [
     {
       number: "95%",
-      label: "klanttevredenheid",
-      description: "Consistente waardering voor impact en samenwerking"
+      labelKey: "stats.satisfaction",
+      descriptionKey: "stats.satisfaction.desc"
     },
     {
       number: "≤ 6",
-      label: "weken tot prototype",
-      description: "Van idee naar eerste werkende AI-oplossing in weken"
+      labelKey: "stats.weeks", 
+      descriptionKey: "stats.weeks.desc"
     },
     {
       number: "30 - 40%",
-      label: "productiviteitsverbetering",
-      description: "Aantoonbare efficiency-winst bij implementaties"
+      labelKey: "stats.productivity",
+      descriptionKey: "stats.productivity.desc"
     }
   ];
 
@@ -26,10 +29,10 @@ const StatsSection = () => {
         {/* Titel / Intro */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Snel resultaat, hoge tevredenheid, meetbare impact
+            {t('stats.title')}
           </h2>
           <p className="text-muted-foreground max-w-3xl mx-auto">
-            We richten ons op wat ertoe doet: blije klanten, korte doorlooptijd en tastbare waarde.
+            {t('stats.subtitle')}
           </p>
         </div>
 
@@ -43,10 +46,10 @@ const StatsSection = () => {
                 </span>
               </div>
               <h3 className="text-xl font-semibold mb-2 text-foreground capitalize">
-                {stat.label}
+                {t(stat.labelKey)}
               </h3>
               <p className="text-muted-foreground">
-                {stat.description}
+                {t(stat.descriptionKey)}
               </p>
             </div>
           ))}
@@ -56,7 +59,7 @@ const StatsSection = () => {
         <div className="text-center">
           <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-glow">
             <Link to="/cases">
-              Bekijk resultaten & cases
+              {t('stats.cta')}
             </Link>
           </Button>
         </div>

@@ -3,8 +3,11 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const CaseStudiesSection = () => {
+  const { t } = useLanguage();
+  
   const caseStudies = [
     {
       title: "Controlesysteem voor de bovenleidingen van Brusselse trams",
@@ -37,10 +40,10 @@ const CaseStudiesSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Succesverhalen
+            {t('cases.title')}
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Ontdek hoe we complexe uitdagingen transformeren tot innovatieve oplossingen die echte impact hebben.
+            {t('cases.subtitle')}
           </p>
         </div>
 
@@ -66,7 +69,7 @@ const CaseStudiesSection = () => {
                 <div className="mb-6">
                   <div className="bg-primary/5 rounded-lg p-4 border-l-4 border-primary">
                     <p className="text-sm font-semibold text-foreground">
-                      Resultaat: <span className="text-primary">{study.impact}</span>
+                      {t('cases.result')} <span className="text-primary">{study.impact}</span>
                     </p>
                   </div>
                 </div>
@@ -80,7 +83,7 @@ const CaseStudiesSection = () => {
                 </div>
 
                 <Button variant="ghost" className="text-primary hover:text-primary/80 p-0 group">
-                  Bekijk case study
+                  {t('cases.view')}
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Button>
               </CardContent>
@@ -91,7 +94,7 @@ const CaseStudiesSection = () => {
         <div className="text-center mt-12">
           <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-glow">
             <Link to="/projecten">
-              Bekijk alle projecten
+              {t('cases.cta')}
             </Link>
           </Button>
         </div>

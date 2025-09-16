@@ -2,25 +2,28 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Shield, Briefcase, Heart } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const SectorsPreview = () => {
+  const { t } = useLanguage();
+  
   const sectors = [
     {
       icon: Shield,
-      title: "Middelgrote verzekeraars",
-      description: "AI-oplossingen voor risicobeoordeling, fraude detectie en klantservice optimalisatie in de verzekeringsbranche.",
+      titleKey: "sectors.insurance.title",
+      descriptionKey: "sectors.insurance.desc",
       color: "text-blue-500"
     },
     {
       icon: Briefcase,
-      title: "Professionele dienstverlening",
-      description: "Automatisering en AI-ondersteuning voor advocatuur, consultancy en boekhouding om efficiëntie te verhogen.",
+      titleKey: "sectors.professional.title",
+      descriptionKey: "sectors.professional.desc",
       color: "text-green-500"
     },
     {
       icon: Heart,
-      title: "Zorgsector",
-      description: "AI-gedreven oplossingen voor klinieken, zorggroepen en kleinere zorginstelling voor betere patiëntenzorg.",
+      titleKey: "sectors.healthcare.title",
+      descriptionKey: "sectors.healthcare.desc",
       color: "text-red-500"
     }
   ];
@@ -30,10 +33,10 @@ const SectorsPreview = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Onze sectoren
+            {t('sectors.title')}
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Wij brengen diepgaande sectorkennis samen met cutting-edge AI-technologie.
+            {t('sectors.subtitle')}
           </p>
         </div>
 
@@ -47,12 +50,12 @@ const SectorsPreview = () => {
                     <IconComponent className={`h-8 w-8 ${sector.color} group-hover:scale-110 transition-transform`} />
                   </div>
                   <CardTitle className="text-2xl font-bold">
-                    {sector.title}
+                    {t(sector.titleKey)}
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <CardDescription className="text-muted-foreground leading-relaxed">
-                    {sector.description}
+                    {t(sector.descriptionKey)}
                   </CardDescription>
                 </CardContent>
               </Card>
@@ -63,7 +66,7 @@ const SectorsPreview = () => {
         <div className="text-center mt-12">
           <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-glow">
             <Link to="/sectoren">
-              Meer ontdekken
+              {t('sectors.cta')}
             </Link>
           </Button>
         </div>

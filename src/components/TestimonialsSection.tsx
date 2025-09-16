@@ -1,7 +1,10 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Quote } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const TestimonialsSection = () => {
+  const { t } = useLanguage();
+  
   const testimonials = [
     {
       quote: "De samenwerking met B12 heeft ons echt in staat gesteld om onze interne capaciteit op het gebied van machine learning en datawetenschappen uit te breiden. Ze hebben ons geholpen om deze capaciteit binnen ons team te laten groeien toen we onze traditionele business intelligence probeerden om te zetten naar een meer data-analytics-gedreven team. B12 deed het samen met ons, niet alleen voor ons, en gaf ons inzicht in hoe we dit zelf konden doen.",
@@ -28,10 +31,10 @@ const TestimonialsSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Wat onze klanten zeggen
+            {t('testimonials.title')}
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Onze partnerships spreken voor zich. Hier zijn ervaringen van bedrijven die we hebben geholpen transformeren.
+            {t('testimonials.subtitle')}
           </p>
         </div>
 
