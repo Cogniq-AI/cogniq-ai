@@ -1,8 +1,11 @@
 import { useEffect } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const PartnersCarousel = () => {
+  const { t } = useLanguage();
+  
   const partners = [
     "AI4Belgium",
     "Agoria", 
@@ -33,7 +36,7 @@ const PartnersCarousel = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold mb-6">
-            Verenigingen en bedrijven waar we met trots mee samenwerken
+            {t('partners.title')}
           </h2>
         </div>
 
@@ -84,7 +87,7 @@ const PartnersCarousel = () => {
 
         <div className="text-center mt-12">
           <p className="text-muted-foreground">
-            En vele andere innovatieve partners in AI en technologie
+            {t('partners.footer')}
           </p>
         </div>
       </div>

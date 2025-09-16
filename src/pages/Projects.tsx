@@ -2,8 +2,11 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import Footer from "@/components/Footer";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Projects = () => {
+  const { t } = useLanguage();
+  
   const projects = [
     {
       title: "Controlesysteem voor de bovenleidingen van Brusselse trams",
@@ -35,10 +38,10 @@ const Projects = () => {
           {/* Header */}
           <div className="text-center mb-16">
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              Onze <span className="gradient-text">Projecten</span>
+              {t('projects.title')} <span className="gradient-text">{t('projects.title.highlight')}</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Ontdek hoe we complexe uitdagingen transformeren tot innovatieve AI-oplossingen voor bedrijven in verschillende sectoren.
+              {t('projects.subtitle')}
             </p>
           </div>
 
@@ -69,7 +72,7 @@ const Projects = () => {
                     ))}
                   </div>
                   <Button variant="ghost" className="text-primary hover:text-primary/80 p-0">
-                    Lees meer →
+                    {t('projects.read.more')}
                   </Button>
                 </CardContent>
               </Card>
@@ -79,13 +82,13 @@ const Projects = () => {
           {/* CTA Section */}
           <div className="text-center">
             <h2 className="text-3xl font-bold mb-6">
-              Heeft u een project in gedachten?
+              {t('projects.cta.title')}
             </h2>
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Laten we samen bespreken hoe we uw uitdaging kunnen omzetten in een innovatieve oplossing.
+              {t('projects.cta.subtitle')}
             </p>
             <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-glow">
-              Start uw project
+              {t('projects.cta.button')}
             </Button>
           </div>
         </div>

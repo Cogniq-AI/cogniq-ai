@@ -18,7 +18,7 @@ const LanguageToggle = () => {
     >
       <Globe className="h-4 w-4" />
       <span className="text-xs font-medium">
-        {language === 'nl' ? 'EN' : 'NL'}
+        {language === 'nl' ? 'NL' : 'EN'}
       </span>
     </Button>
   );

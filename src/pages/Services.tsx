@@ -2,60 +2,62 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Brain, Code, Database, Lightbulb, Palette, Settings, Zap, Shield, BarChart, Cog } from "lucide-react";
-
 import Footer from "@/components/Footer";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Services = () => {
+  const { t } = useLanguage();
+  
   const mainServices = [
     {
       icon: Brain,
-      title: "AI-gebaseerde oplossingen",
-      description: "Op maat gemaakte, geavanceerde artificiële intelligentiesystemen die voldoen aan unieke behoeften van uw organisatie.",
-      features: ["Machine Learning", "Deep Learning", "Computer Vision", "Natural Language Processing"],
+      titleKey: "services.ai.title",
+      descriptionKey: "services.ai.desc",
+      featuresKeys: ["services.ai.features.ml", "services.ai.features.dl", "services.ai.features.cv", "services.ai.features.nlp"],
       color: "text-blue-500"
     },
     {
       icon: Code,
-      title: "Software ontwikkeling",
-      description: "Softwareoplossingen op maat, aangepast aan specifieke behoeften en geïntegreerd met moderne technologieën.",
-      features: ["Custom Development", "API Integration", "Cloud Solutions", "Mobile Apps"],
+      titleKey: "services.software.title",
+      descriptionKey: "services.software.desc",
+      featuresKeys: ["services.software.features.custom", "services.software.features.api", "services.software.features.cloud", "services.software.features.mobile"],
       color: "text-green-500"
     },
     {
       icon: Database,
-      title: "Gegevensbeheer",
-      description: "Gegevensarchitectuur optimaliseren voor verbeterde analyses en betere bedrijfsinzichten.",
-      features: ["Data Architecture", "ETL Pipelines", "Data Warehousing", "Analytics"],
+      titleKey: "services.data.title",
+      descriptionKey: "services.data.desc",
+      featuresKeys: ["services.data.features.arch", "services.data.features.etl", "services.data.features.warehouse", "services.data.features.analytics"],
       color: "text-purple-500"
     },
     {
       icon: Lightbulb,
-      title: "Innovatiestrategie",
-      description: "Strategische verkenning en planning voor geavanceerde technologie voor kunstmatige intelligentie.",
-      features: ["Innovation Roadmap", "Technology Assessment", "Digital Strategy", "R&D Consulting"],
+      titleKey: "services.innovation.title",
+      descriptionKey: "services.innovation.desc",
+      featuresKeys: ["services.innovation.features.roadmap", "services.innovation.features.assessment", "services.innovation.features.strategy", "services.innovation.features.consulting"],
       color: "text-yellow-500"
     },
     {
       icon: Palette,
-      title: "UX & UI-ontwerp",
-      description: "Intuïtieve, gebruiksvriendelijke interfaces maken voor naadloze systeemnavigatie en optimale gebruikerservaring.",
-      features: ["User Research", "Interface Design", "Prototyping", "Usability Testing"],
+      titleKey: "services.ux.title",
+      descriptionKey: "services.ux.desc",
+      featuresKeys: ["services.ux.features.research", "services.ux.features.design", "services.ux.features.prototype", "services.ux.features.testing"],
       color: "text-pink-500"
     },
     {
       icon: Settings,
-      title: "MLOps en DevOps",
-      description: "Robuuste, efficiënte frameworks bouwen voor schaalbare, goed presterende oplossingen.",
-      features: ["CI/CD Pipelines", "Model Deployment", "Infrastructure", "Monitoring"],
+      titleKey: "services.ops.title",
+      descriptionKey: "services.ops.desc",
+      featuresKeys: ["services.ops.features.cicd", "services.ops.features.deployment", "services.ops.features.infrastructure", "services.ops.features.monitoring"],
       color: "text-red-500"
     }
   ];
 
   const additionalServices = [
-    { icon: Zap, title: "Performance Optimization", description: "Systeemprestaties verbeteren" },
-    { icon: Shield, title: "Security Consulting", description: "Veiligheid en compliance waarborgen" },
-    { icon: BarChart, title: "Business Intelligence", description: "Data-gedreven besluitvorming" },
-    { icon: Cog, title: "Process Automation", description: "Bedrijfsprocessen automatiseren" }
+    { icon: Zap, titleKey: "services.performance.title", descriptionKey: "services.performance.desc" },
+    { icon: Shield, titleKey: "services.security.title", descriptionKey: "services.security.desc" },
+    { icon: BarChart, titleKey: "services.bi.title", descriptionKey: "services.bi.desc" },
+    { icon: Cog, titleKey: "services.automation.title", descriptionKey: "services.automation.desc" }
   ];
 
   return (
@@ -64,10 +66,10 @@ const Services = () => {
         {/* Header */}
         <div className="text-center mb-16">
           <h1 className="text-5xl md:text-6xl font-bold mb-6">
-            Onze <span className="gradient-text">Diensten</span>
+            {t('services.page.title')} <span className="gradient-text">{t('services.page.title.highlight')}</span>
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Van AI-gedreven oplossingen tot volledige softwareontwikkeling - wij helpen bedrijven transformeren met cutting-edge technologie.
+            {t('services.page.subtitle')}
           </p>
         </div>
 
@@ -82,23 +84,23 @@ const Services = () => {
                     <IconComponent className={`h-6 w-6 ${service.color} group-hover:scale-110 transition-transform`} />
                   </div>
                   <CardTitle className="text-xl font-semibold">
-                    {service.title}
+                    {t(service.titleKey)}
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <CardDescription className="text-muted-foreground mb-6 leading-relaxed">
-                    {service.description}
+                    {t(service.descriptionKey)}
                   </CardDescription>
                   <div className="space-y-2 mb-6">
-                    {service.features.map((feature, featureIndex) => (
+                    {service.featuresKeys.map((featureKey, featureIndex) => (
                       <div key={featureIndex} className="flex items-center text-sm">
                         <div className="w-1.5 h-1.5 rounded-full bg-primary mr-3" />
-                        <span className="text-muted-foreground">{feature}</span>
+                        <span className="text-muted-foreground">{t(featureKey)}</span>
                       </div>
                     ))}
                   </div>
                   <Button variant="ghost" className="text-primary hover:text-primary/80 p-0">
-                    Meer informatie →
+                    {t('services.more')}
                   </Button>
                 </CardContent>
               </Card>
@@ -109,7 +111,7 @@ const Services = () => {
         {/* Additional Services */}
         <div className="mb-16">
           <h2 className="text-3xl font-bold text-center mb-12">
-            Aanvullende <span className="gradient-text">Specialisaties</span>
+            {t('services.additional.title')} <span className="gradient-text">{t('services.additional.title.highlight')}</span>
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {additionalServices.map((service, index) => {
@@ -120,8 +122,8 @@ const Services = () => {
                     <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-smooth">
                       <IconComponent className="h-5 w-5 text-primary" />
                     </div>
-                    <h3 className="font-semibold mb-2">{service.title}</h3>
-                    <p className="text-sm text-muted-foreground">{service.description}</p>
+                    <h3 className="font-semibold mb-2">{t(service.titleKey)}</h3>
+                    <p className="text-sm text-muted-foreground">{t(service.descriptionKey)}</p>
                   </CardContent>
                 </Card>
               );
@@ -132,17 +134,17 @@ const Services = () => {
         {/* CTA Section */}
         <div className="text-center bg-card-gradient rounded-2xl p-12 shadow-card">
           <h2 className="text-3xl font-bold mb-6">
-            Klaar om uw project te starten?
+            {t('services.final.cta.title')}
           </h2>
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Laten we bespreken hoe onze expertise uw bedrijf naar het volgende niveau kan tillen.
+            {t('services.final.cta.subtitle')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-glow">
-              Neem contact op
+              {t('services.final.cta.contact')}
             </Button>
             <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary/10">
-              Bekijk onze projecten
+              {t('services.final.cta.projects')}
             </Button>
           </div>
         </div>

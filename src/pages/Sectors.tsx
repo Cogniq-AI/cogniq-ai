@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Shield, Briefcase, Heart, Truck, Calculator, Building } from "lucide-react";
 import Footer from "@/components/Footer";
+import { useLanguage } from "@/contexts/LanguageContext";
 import insuranceImage from "@/assets/insurance-sector.jpg";
 import professionalServicesImage from "@/assets/professional-services.jpg";
 import healthcareImage from "@/assets/healthcare-clinic.jpg";
@@ -11,6 +12,8 @@ import taxImage from "@/assets/tax-optimization.jpg";
 import publicSectorImage from "@/assets/public-sector.jpg";
 
 const Sectors = () => {
+  const { t } = useLanguage();
+  
   const sectors = [
     {
       icon: Shield,
@@ -98,10 +101,10 @@ const Sectors = () => {
         {/* Header */}
         <div className="text-center mb-16">
           <h1 className="text-5xl md:text-6xl font-bold mb-6">
-            Onze <span className="gradient-text">Sectoren</span>
+            {t('specializations.title')} <span className="gradient-text">{t('specializations.title.highlight')}</span>
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Wij brengen diepgaande sectorkennis samen met cutting-edge AI-technologie om specifieke uitdagingen in verschillende industrieën op te lossen.
+            {t('specializations.subtitle')}
           </p>
         </div>
 
@@ -132,7 +135,7 @@ const Sectors = () => {
                           <IconComponent className="h-6 w-6 text-primary" />
                         </div>
                         <Badge variant="secondary" className="bg-primary/10 text-primary border-primary/20">
-                          Sector Focus
+                          {t('specializations.focus')}
                         </Badge>
                       </div>
                       <CardTitle className="text-3xl font-bold mb-4">
@@ -145,7 +148,7 @@ const Sectors = () => {
                       </CardDescription>
 
                       <div className="mb-6">
-                        <h4 className="font-semibold mb-4 text-foreground">Onze oplossingen:</h4>
+                        <h4 className="font-semibold mb-4 text-foreground">{t('specializations.solutions')}</h4>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                           {sector.solutions.map((solution, solutionIndex) => (
                             <div key={solutionIndex} className="flex items-center text-sm">
@@ -158,16 +161,16 @@ const Sectors = () => {
 
                       <div className="p-4 bg-primary/5 rounded-lg mb-6 border-l-4 border-primary">
                         <p className="text-sm text-muted-foreground">
-                          <strong className="text-foreground">Case Study:</strong> {sector.caseStudy}
+                          <strong className="text-foreground">{t('specializations.case.study')}</strong> {sector.caseStudy}
                         </p>
                       </div>
 
                       <div className="flex flex-col sm:flex-row gap-3">
                         <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">
-                          Meer over {sector.title.toLowerCase()}
+                          {t('specializations.more.about')} {sector.title.toLowerCase()}
                         </Button>
                         <Button variant="outline" className="border-primary text-primary hover:bg-primary/10">
-                          Bekijk projecten
+                          {t('specializations.view.projects')}
                         </Button>
                       </div>
                     </CardContent>
@@ -182,13 +185,13 @@ const Sectors = () => {
         <div className="mt-20 text-center">
           <div className="bg-card-gradient rounded-2xl p-12 shadow-card">
             <h3 className="text-2xl font-bold mb-4">
-              Uw sector niet vermeld?
+              {t('specializations.not.listed.title')}
             </h3>
             <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-              Wij werken met bedrijven in diverse sectoren. Neem contact met ons op om te bespreken hoe we uw specifieke uitdagingen kunnen oplossen.
+              {t('specializations.not.listed.desc')}
             </p>
             <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-glow">
-              Bespreek uw project
+              {t('specializations.not.listed.cta')}
             </Button>
           </div>
         </div>
