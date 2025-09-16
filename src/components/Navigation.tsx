@@ -3,19 +3,22 @@ import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
+import LanguageToggle from "./LanguageToggle";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
+  const { t } = useLanguage();
 
   const navItems = [
-    { name: "Home", path: "/" },
-    { name: "Projecten", path: "/projecten" },
-    { name: "Diensten", path: "/diensten" },
-    { name: "Sectoren", path: "/sectoren" },
-    { name: "Team", path: "/team" },
-    { name: "Nieuws", path: "/nieuws" },
-    { name: "Carrière", path: "/carriere" },
+    { name: t("nav.home"), path: "/" },
+    { name: t("nav.projects"), path: "/projecten" },
+    { name: t("nav.services"), path: "/diensten" },
+    { name: t("nav.sectors"), path: "/sectoren" },
+    { name: t("nav.team"), path: "/team" },
+    { name: t("nav.news"), path: "/nieuws" },
+    { name: t("nav.career"), path: "/carriere" },
   ];
 
   const isActive = (path: string) => location.pathname === path;
@@ -42,14 +45,16 @@ const Navigation = () => {
                 {item.name}
               </Link>
             ))}
+            <LanguageToggle />
             <ThemeToggle />
             <Button asChild variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
-              <Link to="/contact">Neem contact op</Link>
+              <Link to="/contact">{t("nav.contact")}</Link>
             </Button>
           </div>
 
           {/* Mobile menu button */}
           <div className="md:hidden flex items-center space-x-2">
+            <LanguageToggle />
             <ThemeToggle />
             <Button
               variant="ghost"
@@ -83,7 +88,7 @@ const Navigation = () => {
               <div className="px-3 py-2">
                 <Button asChild variant="outline" className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground">
                   <Link to="/contact" onClick={() => setIsOpen(false)}>
-                    Neem contact op
+                    {t("nav.contact")}
                   </Link>
                 </Button>
               </div>
