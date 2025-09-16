@@ -3,9 +3,12 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Shield, Briefcase, Heart, Truck, Calculator, Building } from "lucide-react";
 import Footer from "@/components/Footer";
-import healthcareImage from "@/assets/healthcare-ai.jpg";
-import energyImage from "@/assets/energy-tech.jpg";
-import pharmaImage from "@/assets/pharma-research.jpg";
+import insuranceImage from "@/assets/insurance-sector.jpg";
+import professionalServicesImage from "@/assets/professional-services.jpg";
+import healthcareImage from "@/assets/healthcare-clinic.jpg";
+import logisticsImage from "@/assets/logistics-customs.jpg";
+import taxImage from "@/assets/tax-optimization.jpg";
+import publicSectorImage from "@/assets/public-sector.jpg";
 
 const Sectors = () => {
   const sectors = [
@@ -13,7 +16,7 @@ const Sectors = () => {
       icon: Shield,
       title: "Middelgrote verzekeraars",
       description: "AI-oplossingen voor risicobeoordeling, fraude detectie en klantservice optimalisatie specifiek voor middelgrote verzekeringsmaatschappijen.",
-      image: energyImage,
+      image: insuranceImage,
       solutions: [
         "Geautomatiseerde risicobeoordeling",
         "Fraude detectie systemen",
@@ -26,7 +29,7 @@ const Sectors = () => {
       icon: Briefcase,
       title: "Professionele dienstverlening",
       description: "Automatisering en AI-ondersteuning voor advocatuur, consultancy en boekhouding om efficiëntie te verhogen en kwaliteit te verbeteren.",
-      image: pharmaImage,
+      image: professionalServicesImage,
       solutions: [
         "Juridische documenten analyse",
         "Geautomatiseerde boekhouding",
@@ -52,7 +55,7 @@ const Sectors = () => {
       icon: Truck,
       title: "Logistiek en Douane",
       description: "Slimme oplossingen voor supply chain optimalisatie, douaneprocedures en transport efficiëntie verbetering.",
-      image: energyImage,
+      image: logisticsImage,
       solutions: [
         "Route optimalisatie",
         "Douane documentatie automatisering",
@@ -65,7 +68,7 @@ const Sectors = () => {
       icon: Calculator,
       title: "Belasting optimalisatie voor bedrijven",
       description: "AI-gedreven belastingoptimalisatie en compliance oplossingen voor bedrijven om fiscale efficiëntie te maximaliseren.",
-      image: pharmaImage,
+      image: taxImage,
       solutions: [
         "Belasting planning tools",
         "Compliance monitoring",
@@ -78,7 +81,7 @@ const Sectors = () => {
       icon: Building,
       title: "Publieke sector (gemeenten, overheid)",
       description: "Digitalisering en AI-oplossingen voor overheidsdiensten en gemeentelijke processen. (Later beschikbaar)",
-      image: healthcareImage,
+      image: publicSectorImage,
       solutions: [
         "Burger service optimalisatie",
         "Document verwerking",
