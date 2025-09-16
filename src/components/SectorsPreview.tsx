@@ -1,27 +1,27 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Heart, Zap, Pill } from "lucide-react";
+import { Shield, Briefcase, Heart } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const SectorsPreview = () => {
   const sectors = [
     {
-      icon: Heart,
-      title: "Gezondheidszorg",
-      description: "AI-gedreven oplossingen voor medische diagnose, behandelplannen en patiëntenzorg optimalisatie.",
-      color: "text-red-500"
-    },
-    {
-      icon: Zap,
-      title: "Energie",
-      description: "Smart grid technologie en predictieve systemen voor duurzame energieproductie en -distributie.",
-      color: "text-yellow-500"
-    },
-    {
-      icon: Pill,
-      title: "Farmaceutische industrie",
-      description: "Versnelling van geneesmiddelenonderzoek en klinische trials door AI-analyse.",
+      icon: Shield,
+      title: "Middelgrote verzekeraars",
+      description: "AI-oplossingen voor risicobeoordeling, fraude detectie en klantservice optimalisatie in de verzekeringsbranche.",
       color: "text-blue-500"
+    },
+    {
+      icon: Briefcase,
+      title: "Professionele dienstverlening",
+      description: "Automatisering en AI-ondersteuning voor advocatuur, consultancy en boekhouding om efficiëntie te verhogen.",
+      color: "text-green-500"
+    },
+    {
+      icon: Heart,
+      title: "Zorgsector",
+      description: "AI-gedreven oplossingen voor klinieken, zorggroepen en kleinere zorginstelling voor betere patiëntenzorg.",
+      color: "text-red-500"
     }
   ];
 

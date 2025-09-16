@@ -1,7 +1,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Heart, Zap, Pill } from "lucide-react";
+import { Shield, Briefcase, Heart, Truck, Calculator, Building } from "lucide-react";
 import Footer from "@/components/Footer";
 import healthcareImage from "@/assets/healthcare-ai.jpg";
 import energyImage from "@/assets/energy-tech.jpg";
@@ -10,43 +10,82 @@ import pharmaImage from "@/assets/pharma-research.jpg";
 const Sectors = () => {
   const sectors = [
     {
-      icon: Heart,
-      title: "Gezondheidszorg",
-      description: "Transformatie van de gezondheidszorg door geavanceerde AI-technologieën die patiëntenzorg verbeteren en medische processen optimaliseren.",
-      image: healthcareImage,
-      solutions: [
-        "Medische beeldanalyse met AI",
-        "Predictieve diagnose systemen",
-        "Patiëntgegevens beheer",
-        "Behandelplan optimalisatie"
-      ],
-      caseStudy: "Onderzoeksinstrument voor de evaluatie van behandelplannen voor Ion Beam Applications"
-    },
-    {
-      icon: Zap,
-      title: "Energie",
-      description: "Innovatieve oplossingen voor duurzame energie die efficiëntie verhogen en de overgang naar hernieuwbare energiebronnen versnellen.",
+      icon: Shield,
+      title: "Middelgrote verzekeraars",
+      description: "AI-oplossingen voor risicobeoordeling, fraude detectie en klantservice optimalisatie specifiek voor middelgrote verzekeringsmaatschappijen.",
       image: energyImage,
       solutions: [
-        "Smart grid technologie",
-        "Energieproductie voorspelling",
-        "Fotovoltaïsche monitoring",
-        "Netwerk optimalisatie"
+        "Geautomatiseerde risicobeoordeling",
+        "Fraude detectie systemen",
+        "Klantservice chatbots",
+        "Premieberekening optimalisatie"
       ],
-      caseStudy: "Fotovoltaïsche installaties bewaken met machine learning voor Perpetum"
+      caseStudy: "AI-gedreven risicobeoordeling voor middelgrote verzekeraars"
     },
     {
-      icon: Pill,
-      title: "Farmaceutische industrie",
-      description: "Versnelling van geneesmiddelenonderzoek en -ontwikkeling door AI-gedreven analyse en procesoptimalisatie.",
+      icon: Briefcase,
+      title: "Professionele dienstverlening",
+      description: "Automatisering en AI-ondersteuning voor advocatuur, consultancy en boekhouding om efficiëntie te verhogen en kwaliteit te verbeteren.",
       image: pharmaImage,
       solutions: [
-        "Drug discovery acceleration",
-        "Moleculaire analyse",
-        "Klinische trial optimalisatie",
-        "Regulatoire compliance"
+        "Juridische documenten analyse",
+        "Geautomatiseerde boekhouding",
+        "Consultant rapportage tools",
+        "Client relationship management"
       ],
-      caseStudy: "AI-gedreven medicijnonderzoek voor farmaceutische partners"
+      caseStudy: "Document analyse systeem voor advocatenkantoren"
+    },
+    {
+      icon: Heart,
+      title: "Zorgsector",
+      description: "AI-gedreven oplossingen voor klinieken, zorggroepen en kleinere zorginstellingen (geen ziekenhuizen) voor betere patiëntenzorg.",
+      image: healthcareImage,
+      solutions: [
+        "Patiënt planning optimalisatie",
+        "Medische data analyse",
+        "Behandelplan ondersteuning",
+        "Kwaliteitsbewaking systemen"
+      ],
+      caseStudy: "Patiëntenzorg optimalisatie voor zorggroepen"
+    },
+    {
+      icon: Truck,
+      title: "Logistiek en Douane",
+      description: "Slimme oplossingen voor supply chain optimalisatie, douaneprocedures en transport efficiëntie verbetering.",
+      image: energyImage,
+      solutions: [
+        "Route optimalisatie",
+        "Douane documentatie automatisering",
+        "Voorraad management",
+        "Transport planning AI"
+      ],
+      caseStudy: "Supply chain optimalisatie voor logistieke partners"
+    },
+    {
+      icon: Calculator,
+      title: "Belasting optimalisatie voor bedrijven",
+      description: "AI-gedreven belastingoptimalisatie en compliance oplossingen voor bedrijven om fiscale efficiëntie te maximaliseren.",
+      image: pharmaImage,
+      solutions: [
+        "Belasting planning tools",
+        "Compliance monitoring",
+        "Aftrek optimalisatie",
+        "Fiscale rapportage automatisering"
+      ],
+      caseStudy: "Belastingoptimalisatie systeem voor MKB bedrijven"
+    },
+    {
+      icon: Building,
+      title: "Publieke sector (gemeenten, overheid)",
+      description: "Digitalisering en AI-oplossingen voor overheidsdiensten en gemeentelijke processen. (Later beschikbaar)",
+      image: healthcareImage,
+      solutions: [
+        "Burger service optimalisatie",
+        "Document verwerking",
+        "Data analyse voor beleid",
+        "Proces automatisering"
+      ],
+      caseStudy: "Binnenkort beschikbaar - Publieke sector projecten"
     }
   ];
 
@@ -136,13 +175,13 @@ const Sectors = () => {
           })}
         </div>
 
-        {/* Additional Sectors */}
+        {/* Additional Information */}
         <div className="mt-20 text-center">
           <h2 className="text-3xl font-bold mb-8">
-            Andere sectoren waar we actief zijn
+            Onze focus sectoren
           </h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
-            {["Transport", "Fintech", "Manufacturing", "Retail", "Education", "Government", "Telecom", "Logistics"].map((sector, index) => (
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-12">
+            {["Middelgrote verzekeraars", "Professionele dienstverlening", "Zorgsector", "Logistiek & Douane", "Belastingoptimalisatie", "Publieke sector (later)"].map((sector, index) => (
               <div key={index} className="p-4 bg-card rounded-lg border border-border hover:border-primary/50 transition-smooth cursor-pointer">
                 <span className="text-sm font-medium">{sector}</span>
               </div>
