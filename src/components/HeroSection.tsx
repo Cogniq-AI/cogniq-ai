@@ -26,14 +26,14 @@ const HeroSection = () => {
             NU.
           </h1>
           
-          <p className="text-xl md:text-2xl text-foreground/90 mb-8 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl text-white mb-8 max-w-2xl mx-auto leading-relaxed drop-shadow-lg">
             Start uw AI-reis met een betrouwbare partner
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button 
               size="lg" 
-              className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-glow group"
+              className="bg-primary hover:bg-primary/90 text-white shadow-glow group border-0"
             >
               Ontdek onze expertise
               <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
@@ -42,7 +42,7 @@ const HeroSection = () => {
             <Button 
               size="lg" 
               variant="outline"
-              className="border-foreground/20 text-foreground hover:bg-foreground/10"
+              className="border-white/30 text-white hover:bg-white/10 backdrop-blur-sm bg-white/5"
             >
               Bekijk projecten
             </Button>
@@ -52,8 +52,8 @@ const HeroSection = () => {
 
       {/* Scroll indicator - moved outside content container */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20">
-        <div className="w-6 h-10 border-2 border-foreground/30 rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-foreground/50 rounded-full mt-2 animate-pulse" />
+        <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
+          <div className="w-1 h-3 bg-white/50 rounded-full mt-2 animate-pulse" />
         </div>
       </div>
     </section>
