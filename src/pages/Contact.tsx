@@ -24,7 +24,7 @@ const Contact = () => {
     {
       icon: Mail,
       title: "E-mail",
-      details: ["info@b12-consulting.com", "sales@b12-consulting.com"],
+      details: ["info@morrava-ai.com", "sales@morrava-ai.com"],
       color: "text-purple-500"
     },
     {

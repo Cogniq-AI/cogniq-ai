@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import ThemeToggle from "./ThemeToggle";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,8 +26,7 @@ const Navigation = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <div className="text-2xl font-black gradient-text">ΣB12</div>
-            <div className="text-sm text-muted-foreground">part of luma</div>
+            <div className="text-2xl font-black gradient-text">Morrava AI</div>
           </Link>
 
           {/* Desktop Navigation */}
@@ -42,13 +42,15 @@ const Navigation = () => {
                 {item.name}
               </Link>
             ))}
+            <ThemeToggle />
             <Button asChild variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
               <Link to="/contact">Neem contact op</Link>
             </Button>
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center space-x-2">
+            <ThemeToggle />
             <Button
               variant="ghost"
               size="sm"

@@ -86,7 +86,7 @@ const Team = () => {
           <div className="relative overflow-hidden rounded-2xl shadow-card">
             <img 
               src={teamImage} 
-              alt="B12 Consulting team collaboration"
+              alt="Morrava AI team collaboration"
               className="w-full h-96 object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/20 to-transparent" />
@@ -170,7 +170,7 @@ const Team = () => {
         </div>
 
         {/* Join Our Team */}
-        <div className="text-center bg-card-gradient rounded-2xl p-12 shadow-card">
+        <div className="text-center mb-16">
           <h2 className="text-3xl font-bold mb-6">
             Word deel van ons team
           </h2>

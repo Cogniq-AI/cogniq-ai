@@ -38,11 +38,10 @@ const Footer = () => {
             {/* Company Info */}
             <div className="lg:col-span-2">
               <Link to="/" className="flex items-center space-x-2 mb-6">
-                <div className="text-3xl font-black gradient-text">ΣB12</div>
-                <div className="text-sm text-muted-foreground">part of luma</div>
+                <div className="text-3xl font-black gradient-text">Morrava AI</div>
               </Link>
               <p className="text-muted-foreground mb-6 leading-relaxed">
-                B12 Consulting transformeert bedrijven met innovatieve AI-oplossingen. 
+                Morrava AI transformeert bedrijven met innovatieve AI-oplossingen. 
                 Van strategie tot implementatie, wij zijn uw betrouwbare partner in de AI-revolutie.
               </p>
               
@@ -58,7 +57,7 @@ const Footer = () => {
                 </div>
                 <div className="flex items-center text-sm text-muted-foreground">
                   <Mail className="h-4 w-4 mr-3 text-primary" />
-                  info@b12-consulting.com
+                  info@morrava-ai.com
                 </div>
               </div>
             </div>
@@ -121,7 +120,7 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center">
             {/* Copyright */}
             <div className="text-sm text-muted-foreground mb-4 md:mb-0">
-              © 2024 B12 Consulting. Alle rechten voorbehouden.
+              © 2024 Morrava AI. Alle rechten voorbehouden.
             </div>
 
             {/* Social Links */}

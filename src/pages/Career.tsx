@@ -100,11 +100,11 @@ const Career = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">
-            Carrière bij <span className="gradient-text">B12</span>
-          </h1>
+            <h1 className="text-5xl md:text-6xl font-bold mb-6">
+              Carrière bij <span className="gradient-text">Morrava AI</span>
+            </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Word deel van een team dat de toekomst van AI vormgeeft. Bij B12 combineren we technische excellentie met een geweldige werkcultuur.
+            Word deel van een team dat de toekomst van AI vormgeeft. Bij Morrava AI combineren we technische excellentie met een geweldige werkcultuur.
           </p>
         </div>
 
@@ -112,9 +112,9 @@ const Career = () => {
         <div className="mb-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl font-bold mb-6">
-                Waarom werken bij <span className="gradient-text">B12</span>?
-              </h2>
+            <h2 className="text-3xl font-bold mb-6">
+              Waarom werken bij <span className="gradient-text">Morrava AI</span>?
+            </h2>
               <div className="space-y-4">
                 {workingAtB12.map((item, index) => (
                   <div key={index} className="flex items-start">
@@ -127,10 +127,10 @@ const Career = () => {
               </div>
             </div>
             <div className="bg-card-gradient rounded-2xl p-8 shadow-card">
-              <div className="text-center mb-6">
-                <div className="text-6xl font-bold gradient-text mb-2">40+</div>
-                <p className="text-muted-foreground">Experts in ons team</p>
-              </div>
+          <div className="text-center mb-6">
+            <div className="text-6xl font-bold gradient-text mb-2">40+</div>
+            <p className="text-muted-foreground">Experts in ons team</p>
+          </div>
               <div className="grid grid-cols-2 gap-4 text-center">
                 <div>
                   <div className="text-2xl font-bold text-foreground">12+</div>
