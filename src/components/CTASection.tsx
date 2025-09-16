@@ -47,7 +47,7 @@ const CTASection = () => {
                 asChild
                 size="lg" 
                 variant="outline"
-                className="border-white/30 text-white hover:bg-white/10 backdrop-blur-sm text-lg px-8 py-4"
+                className="border-white/30 text-white hover:bg-blue/10 backdrop-blur-sm text-lg px-8 py-4"
               >
                 <Link to="/projecten">
                   Bekijk onze projecten
