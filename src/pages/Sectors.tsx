@@ -180,17 +180,6 @@ const Sectors = () => {
 
         {/* Additional Information */}
         <div className="mt-20 text-center">
-          <h2 className="text-3xl font-bold mb-8">
-            Onze focus sectoren
-          </h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-12">
-            {["Middelgrote verzekeraars", "Professionele dienstverlening", "Zorgsector", "Logistiek & Douane", "Belastingoptimalisatie", "Publieke sector (later)"].map((sector, index) => (
-              <div key={index} className="p-4 bg-card rounded-lg border border-border hover:border-primary/50 transition-smooth cursor-pointer">
-                <span className="text-sm font-medium">{sector}</span>
-              </div>
-            ))}
-          </div>
-          
           <div className="bg-card-gradient rounded-2xl p-12 shadow-card">
             <h3 className="text-2xl font-bold mb-4">
               Uw sector niet vermeld?
