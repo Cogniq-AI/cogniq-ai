@@ -14,7 +14,7 @@ const StatsSection = () => {
       description: "Van idee naar eerste werkende AI-oplossing in weken"
     },
     {
-      number: "20–30%",
+      number: "30 - 40%",
       label: "productiviteitsverbetering",
       description: "Aantoonbare efficiency-winst bij implementaties"
     }
