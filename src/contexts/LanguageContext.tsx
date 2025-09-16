@@ -146,7 +146,7 @@ const translations = {
     'services.final.cta.contact': 'Neem contact op',
     'services.final.cta.projects': 'Bekijk onze projecten',
     
-    // Sectors Page
+    // Specializations/Sectors Page
     'specializations.title': 'Onze',
     'specializations.title.highlight': 'Sectoren',
     'specializations.subtitle': 'Wij brengen diepgaande sectorkennis samen met cutting-edge AI-technologie om specifieke uitdagingen in verschillende industrieën op te lossen.',
@@ -158,6 +158,29 @@ const translations = {
     'specializations.not.listed.title': 'Uw sector niet vermeld?',
     'specializations.not.listed.desc': 'Wij werken met bedrijven in diverse sectoren. Neem contact met ons op om te bespreken hoe we uw specifieke uitdagingen kunnen oplossen.',
     'specializations.not.listed.cta': 'Bespreek uw project',
+    
+    // Footer
+    'footer.description': 'Morrava AI transformeert bedrijven met innovatieve AI-oplossingen. Van strategie tot implementatie, wij zijn uw betrouwbare partner in de AI-revolutie.',
+    'footer.company': 'Bedrijf',
+    'footer.services': 'Diensten',
+    'footer.sectors': 'Sectoren',
+    'footer.company.about': 'Over ons',
+    'footer.company.team': 'Team',
+    'footer.company.career': 'Carrière',
+    'footer.company.news': 'Nieuws',
+    'footer.services.ai': 'AI-oplossingen',
+    'footer.services.software': 'Software ontwikkeling',
+    'footer.services.data': 'Data engineering',
+    'footer.services.consultancy': 'Consultancy',
+    'footer.sectors.healthcare': 'Gezondheidszorg',
+    'footer.sectors.energy': 'Energie',
+    'footer.sectors.pharma': 'Farmaceutisch',
+    'footer.sectors.transport': 'Transport',
+    'footer.legal.privacy': 'Privacy beleid',
+    'footer.legal.terms': 'Algemene voorwaarden',
+    'footer.legal.cookies': 'Cookies',
+    'footer.legal.gdpr': 'GDPR',
+    'footer.copyright': '© 2024 Morrava AI. Alle rechten voorbehouden.',
   },
   en: {
     // Navigation
@@ -294,7 +317,7 @@ const translations = {
     'services.final.cta.contact': 'Get in touch',
     'services.final.cta.projects': 'View our projects',
     
-    // Sectors Page
+    // Specializations/Sectors Page
     'specializations.title': 'Our',
     'specializations.title.highlight': 'Sectors',
     'specializations.subtitle': 'We combine deep sector knowledge with cutting-edge AI technology to solve specific challenges in different industries.',
@@ -306,6 +329,29 @@ const translations = {
     'specializations.not.listed.title': 'Your sector not listed?',
     'specializations.not.listed.desc': 'We work with companies in various sectors. Contact us to discuss how we can solve your specific challenges.',
     'specializations.not.listed.cta': 'Discuss your project',
+    
+    // Footer
+    'footer.description': 'Morrava AI transforms businesses with innovative AI solutions. From strategy to implementation, we are your trusted partner in the AI revolution.',
+    'footer.company': 'Company',
+    'footer.services': 'Services',
+    'footer.sectors': 'Sectors',
+    'footer.company.about': 'About us',
+    'footer.company.team': 'Team',
+    'footer.company.career': 'Career',
+    'footer.company.news': 'News',
+    'footer.services.ai': 'AI solutions',
+    'footer.services.software': 'Software development',
+    'footer.services.data': 'Data engineering',
+    'footer.services.consultancy': 'Consultancy',
+    'footer.sectors.healthcare': 'Healthcare',
+    'footer.sectors.energy': 'Energy',
+    'footer.sectors.pharma': 'Pharmaceutical',
+    'footer.sectors.transport': 'Transport',
+    'footer.legal.privacy': 'Privacy policy',
+    'footer.legal.terms': 'Terms and conditions',
+    'footer.legal.cookies': 'Cookies',
+    'footer.legal.gdpr': 'GDPR',
+    'footer.copyright': '© 2024 Morrava AI. All rights reserved.',
   },
 };
 

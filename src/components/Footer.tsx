@@ -1,31 +1,34 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin, Linkedin, Twitter, Github } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Footer = () => {
+  const { t } = useLanguage();
+  
   const footerLinks = {
     company: [
-      { name: "Over ons", path: "/over-ons" },
-      { name: "Team", path: "/team" },
-      { name: "Carrière", path: "/carriere" },
-      { name: "Nieuws", path: "/nieuws" }
+      { nameKey: "footer.company.about", path: "/over-ons" },
+      { nameKey: "footer.company.team", path: "/team" },
+      { nameKey: "footer.company.career", path: "/carriere" },
+      { nameKey: "footer.company.news", path: "/nieuws" }
     ],
     services: [
-      { name: "AI-oplossingen", path: "/diensten" },
-      { name: "Software ontwikkeling", path: "/diensten" },
-      { name: "Data engineering", path: "/diensten" },
-      { name: "Consultancy", path: "/diensten" }
+      { nameKey: "footer.services.ai", path: "/diensten" },
+      { nameKey: "footer.services.software", path: "/diensten" },
+      { nameKey: "footer.services.data", path: "/diensten" },
+      { nameKey: "footer.services.consultancy", path: "/diensten" }
     ],
     sectors: [
-      { name: "Gezondheidszorg", path: "/sectoren" },
-      { name: "Energie", path: "/sectoren" },
-      { name: "Farmaceutisch", path: "/sectoren" },
-      { name: "Transport", path: "/sectoren" }
+      { nameKey: "footer.sectors.healthcare", path: "/sectoren" },
+      { nameKey: "footer.sectors.energy", path: "/sectoren" },
+      { nameKey: "footer.sectors.pharma", path: "/sectoren" },
+      { nameKey: "footer.sectors.transport", path: "/sectoren" }
     ],
     legal: [
-      { name: "Privacy beleid", path: "/privacy" },
-      { name: "Algemene voorwaarden", path: "/voorwaarden" },
-      { name: "Cookies", path: "/cookies" },
-      { name: "GDPR", path: "/gdpr" }
+      { nameKey: "footer.legal.privacy", path: "/privacy" },
+      { nameKey: "footer.legal.terms", path: "/voorwaarden" },
+      { nameKey: "footer.legal.cookies", path: "/cookies" },
+      { nameKey: "footer.legal.gdpr", path: "/gdpr" }
     ]
   };
 
@@ -41,8 +44,7 @@ const Footer = () => {
                 <div className="text-3xl font-black gradient-text">Morrava AI</div>
               </Link>
               <p className="text-muted-foreground mb-6 leading-relaxed">
-                Morrava AI transformeert bedrijven met innovatieve AI-oplossingen. 
-                Van strategie tot implementatie, wij zijn uw betrouwbare partner in de AI-revolutie.
+                {t('footer.description')}
               </p>
               
               {/* Contact Info */}
@@ -64,7 +66,7 @@ const Footer = () => {
 
             {/* Company Links */}
             <div>
-              <h3 className="font-semibold mb-4 text-foreground">Bedrijf</h3>
+              <h3 className="font-semibold mb-4 text-foreground">{t('footer.company')}</h3>
               <ul className="space-y-2">
                 {footerLinks.company.map((link, index) => (
                   <li key={index}>
@@ -72,7 +74,7 @@ const Footer = () => {
                       to={link.path}
                       className="text-sm text-muted-foreground hover:text-primary transition-smooth"
                     >
-                      {link.name}
+                      {t(link.nameKey)}
                     </Link>
                   </li>
                 ))}
@@ -81,7 +83,7 @@ const Footer = () => {
 
             {/* Services Links */}
             <div>
-              <h3 className="font-semibold mb-4 text-foreground">Diensten</h3>
+              <h3 className="font-semibold mb-4 text-foreground">{t('footer.services')}</h3>
               <ul className="space-y-2">
                 {footerLinks.services.map((link, index) => (
                   <li key={index}>
@@ -89,7 +91,7 @@ const Footer = () => {
                       to={link.path}
                       className="text-sm text-muted-foreground hover:text-primary transition-smooth"
                     >
-                      {link.name}
+                      {t(link.nameKey)}
                     </Link>
                   </li>
                 ))}
@@ -98,7 +100,7 @@ const Footer = () => {
 
             {/* Sectors Links */}
             <div>
-              <h3 className="font-semibold mb-4 text-foreground">Sectoren</h3>
+              <h3 className="font-semibold mb-4 text-foreground">{t('footer.sectors')}</h3>
               <ul className="space-y-2">
                 {footerLinks.sectors.map((link, index) => (
                   <li key={index}>
@@ -106,7 +108,7 @@ const Footer = () => {
                       to={link.path}
                       className="text-sm text-muted-foreground hover:text-primary transition-smooth"
                     >
-                      {link.name}
+                      {t(link.nameKey)}
                     </Link>
                   </li>
                 ))}
@@ -120,7 +122,7 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center">
             {/* Copyright */}
             <div className="text-sm text-muted-foreground mb-4 md:mb-0">
-              © 2024 Morrava AI. Alle rechten voorbehouden.
+              {t('footer.copyright')}
             </div>
 
             {/* Social Links */}
@@ -156,7 +158,7 @@ const Footer = () => {
                   to={link.path}
                   className="text-xs text-muted-foreground hover:text-primary transition-smooth"
                 >
-                  {link.name}
+                  {t(link.nameKey)}
                 </Link>
               ))}
             </div>
