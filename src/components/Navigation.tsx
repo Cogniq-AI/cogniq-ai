@@ -27,26 +27,34 @@ const Navigation = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/65 backdrop-blur-sm border-b border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          {/* Logo */}
-          <Link to="/" className="flex items-center space-x-3 group">
-            <img src={congiqLogo} alt="Congiq AI" className="h-10 w-10 transition-transform group-hover:scale-110" />
-            <div className="text-2xl font-black gradient-text">Congiq AI</div>
-          </Link>
+        <div className="flex items-center h-16">
+          {/* Logo - Left */}
+          <div className="flex-shrink-0">
+            <Link to="/" className="flex items-center space-x-3 group">
+              <img src={congiqLogo} alt="Congiq AI" className="h-10 w-10 transition-transform group-hover:scale-110" />
+              <div className="text-2xl font-black gradient-text">Congiq AI</div>
+            </Link>
+          </div>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => (
-              <Link
-                key={item.path}
-                to={item.path}
-                className={`text-sm transition-smooth hover:text-primary ${
-                  isActive(item.path) ? "text-primary font-medium" : "text-muted-foreground"
-                }`}
-              >
-                {item.name}
-              </Link>
-            ))}
+          {/* Desktop Navigation - Center */}
+          <div className="hidden md:flex flex-1 justify-center">
+            <div className="flex items-center space-x-6">
+              {navItems.map((item) => (
+                <Link
+                  key={item.path}
+                  to={item.path}
+                  className={`text-sm transition-smooth hover:text-primary whitespace-nowrap ${
+                    isActive(item.path) ? "text-primary font-medium" : "text-muted-foreground"
+                  }`}
+                >
+                  {item.name}
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* Controls - Right */}
+          <div className="hidden md:flex items-center space-x-3 flex-shrink-0">
             <LanguageToggle />
             <ThemeToggle />
             <Button
@@ -59,7 +67,7 @@ const Navigation = () => {
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden flex items-center space-x-2">
+          <div className="md:hidden flex items-center space-x-2 ml-auto">
             <LanguageToggle />
             <ThemeToggle />
             <Button variant="ghost" size="sm" onClick={() => setIsOpen(!isOpen)} className="text-foreground">
