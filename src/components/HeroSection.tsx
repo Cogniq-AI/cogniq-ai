@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import heroImage from "@/assets/hero-hands-typing.jpg";
 import { useLanguage } from "@/contexts/LanguageContext";
 import AnimatedGrid from "./AnimatedGrid";
 import ParticleField from "./ParticleField";
@@ -8,13 +7,7 @@ import ParticleField from "./ParticleField";
 const HeroSection = () => {
   const { t } = useLanguage();
   
-  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image with Overlay */}
-      <div className="absolute inset-0">
-        <img src={heroImage} alt="Professional AI technology workspace" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 hero-gradient opacity-70 dark:opacity-80" />
-      </div>
-
+  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
       {/* Animated Elements */}
       <AnimatedGrid />
       <ParticleField />

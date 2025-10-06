@@ -65,42 +65,42 @@ All colors MUST be HSL.
   }
 
   .light {
-    /* Light Theme - Professional with Cogniq AI Accents */
-    --background: 210 40% 98%;
-    --foreground: 230 40% 10%;
+    /* Light Theme - Based on Cogniq AI Logo */
+    --background: 0 0% 100%;
+    --foreground: 230 40% 15%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 230 40% 10%;
+    --card: 210 30% 98%;
+    --card-foreground: 230 40% 15%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 230 40% 10%;
+    --popover: 210 30% 98%;
+    --popover-foreground: 230 40% 15%;
 
-    --primary: 190 90% 42%;
+    --primary: 190 95% 45%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 280 75% 58%;
+    --secondary: 280 85% 60%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 210 35% 94%;
-    --muted-foreground: 230 25% 38%;
+    --muted: 210 25% 96%;
+    --muted-foreground: 230 20% 45%;
 
-    --accent: 190 95% 90%;
-    --accent-foreground: 230 40% 10%;
+    --accent: 190 100% 95%;
+    --accent-foreground: 190 95% 35%;
 
     --destructive: 0 75% 52%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 210 30% 88%;
-    --input: 210 35% 94%;
-    --ring: 190 90% 42%;
+    --border: 210 20% 90%;
+    --input: 210 25% 96%;
+    --ring: 190 95% 45%;
 
-    --hero-gradient: linear-gradient(135deg, hsl(210 40% 98% / 0.92), hsl(210 35% 96% / 0.88), hsl(280 40% 98% / 0.85));
-    --tech-gradient: linear-gradient(90deg, hsl(190 90% 42% / 0.08), hsl(280 75% 58% / 0.08));
-    --card-gradient: linear-gradient(145deg, hsl(0 0% 100%), hsl(210 40% 98%));
+    --hero-gradient: linear-gradient(135deg, hsl(0 0% 100%), hsl(210 30% 98%), hsl(280 60% 98%));
+    --tech-gradient: linear-gradient(90deg, hsl(190 95% 45% / 0.06), hsl(280 85% 60% / 0.06));
+    --card-gradient: linear-gradient(145deg, hsl(210 30% 98%), hsl(0 0% 100%));
     
-    --shadow-glow: 0 10px 50px hsl(190 90% 42% / 0.25);
-    --shadow-card: 0 8px 30px hsl(230 30% 50% / 0.12);
-    --shadow-intense: 0 0 60px hsl(190 90% 42% / 0.3), 0 0 30px hsl(280 75% 58% / 0.2);
+    --shadow-glow: 0 10px 50px hsl(190 95% 45% / 0.2);
+    --shadow-card: 0 8px 30px hsl(230 30% 50% / 0.08);
+    --shadow-intense: 0 0 60px hsl(190 95% 45% / 0.25), 0 0 30px hsl(280 85% 60% / 0.15);
   }
 }
 
