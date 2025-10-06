@@ -11,7 +11,7 @@ interface Message {
   timestamp: Date;
 }
 
-const WEBHOOK_URL = 'http://n8n-cogniqai.cogniqai.nl/webhook/f61242f5-b299-4e64-92b0-2adc67461a91';
+const WEBHOOK_URL = 'https://n8n-cogniqai.cogniqai.nl/webhook/f61242f5-b299-4e64-92b0-2adc67461a91';
 
 export default function ChatBot() {
   const [isOpen, setIsOpen] = useState(false);
