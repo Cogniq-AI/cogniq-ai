@@ -25,7 +25,7 @@ const Navigation = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/65 backdrop-blur-sm border-b border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -49,7 +49,11 @@ const Navigation = () => {
             ))}
             <LanguageToggle />
             <ThemeToggle />
-            <Button asChild variant="outline" className="border-primary/50 text-primary hover:bg-primary hover:text-primary-foreground hover:shadow-glow hover:scale-105 transition-all">
+            <Button
+              asChild
+              variant="outline"
+              className="border-primary/50 text-primary hover:bg-primary hover:text-primary-foreground hover:shadow-glow hover:scale-105 transition-all"
+            >
               <Link to="/contact">{t("nav.contact")}</Link>
             </Button>
           </div>
@@ -58,12 +62,7 @@ const Navigation = () => {
           <div className="md:hidden flex items-center space-x-2">
             <LanguageToggle />
             <ThemeToggle />
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={() => setIsOpen(!isOpen)}
-              className="text-foreground"
-            >
+            <Button variant="ghost" size="sm" onClick={() => setIsOpen(!isOpen)} className="text-foreground">
               {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </Button>
           </div>
@@ -88,7 +87,11 @@ const Navigation = () => {
                 </Link>
               ))}
               <div className="px-3 py-2">
-                <Button asChild variant="outline" className="w-full border-primary/50 text-primary hover:bg-primary hover:text-primary-foreground hover:shadow-glow hover:scale-105 transition-all">
+                <Button
+                  asChild
+                  variant="outline"
+                  className="w-full border-primary/50 text-primary hover:bg-primary hover:text-primary-foreground hover:shadow-glow hover:scale-105 transition-all"
+                >
                   <Link to="/contact" onClick={() => setIsOpen(false)}>
                     {t("nav.contact")}
                   </Link>
