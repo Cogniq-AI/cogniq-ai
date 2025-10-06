@@ -1,27 +1,27 @@
-import { useState, useRef, useEffect } from 'react';
-import { MessageCircle, Send, X, Loader2 } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { cn } from '@/lib/utils';
+import { useState, useRef, useEffect } from "react";
+import { MessageCircle, Send, X, Loader2 } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { cn } from "@/lib/utils";
 
 interface Message {
   id: string;
   text: string;
-  sender: 'user' | 'bot';
+  sender: "user" | "bot";
   timestamp: Date;
 }
 
-const WEBHOOK_URL = 'https://n8n-cogniqai.cogniqai.nl/webhook/f61242f5-b299-4e64-92b0-2adc67461a91';
+const WEBHOOK_URL = "https://n8n-cogniqai.cogniqai.nl/webhook/f61242f5-b299-4e64-92b0-2adc67461a91";
 
 export default function ChatBot() {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
-  const [input, setInput] = useState('');
+  const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
   useEffect(() => {
@@ -35,19 +35,19 @@ export default function ChatBot() {
     const userMessage: Message = {
       id: Date.now().toString(),
       text: input,
-      sender: 'user',
+      sender: "user",
       timestamp: new Date(),
     };
 
-    setMessages(prev => [...prev, userMessage]);
-    setInput('');
+    setMessages((prev) => [...prev, userMessage]);
+    setInput("");
     setIsLoading(true);
 
     try {
       const response = await fetch(WEBHOOK_URL, {
-        method: 'POST',
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({
           message: input,
@@ -56,9 +56,9 @@ export default function ChatBot() {
       });
 
       const data = await response.json();
-      
+
       // Extract the actual output from the nested webhook response
-      let botText = 'Message received';
+      let botText = "Message received";
       try {
         // Handle the unusual nested structure from n8n webhook
         const firstKey = Object.keys(data)[0];
@@ -69,30 +69,30 @@ export default function ChatBot() {
           }
         }
         // Fallback to common response fields
-        if (botText === 'Message received') {
-          botText = data.response || data.message || data.output || 'Message received';
+        if (botText === "Message received") {
+          botText = data.response || data.message || data.output || "Message received";
         }
       } catch (e) {
-        console.error('Error parsing webhook response:', e);
+        console.error("Error parsing webhook response:", e);
       }
-      
+
       const botMessage: Message = {
         id: (Date.now() + 1).toString(),
         text: botText,
-        sender: 'bot',
+        sender: "bot",
         timestamp: new Date(),
       };
 
-      setMessages(prev => [...prev, botMessage]);
+      setMessages((prev) => [...prev, botMessage]);
     } catch (error) {
-      console.error('Error sending message:', error);
+      console.error("Error sending message:", error);
       const errorMessage: Message = {
         id: (Date.now() + 1).toString(),
-        text: 'Failed to send message. Please try again.',
-        sender: 'bot',
+        text: "Failed to send message. Please try again.",
+        sender: "bot",
         timestamp: new Date(),
       };
-      setMessages(prev => [...prev, errorMessage]);
+      setMessages((prev) => [...prev, errorMessage]);
     } finally {
       setIsLoading(false);
     }
@@ -103,8 +103,8 @@ export default function ChatBot() {
       {/* Floating Orb Button */}
       <div
         className={cn(
-          'fixed bottom-6 right-6 z-50 transition-all duration-500',
-          isOpen ? 'scale-0 opacity-0' : 'scale-100 opacity-100'
+          "fixed bottom-6 right-6 z-50 transition-all duration-500",
+          isOpen ? "scale-0 opacity-0" : "scale-100 opacity-100",
         )}
       >
         <button
@@ -119,10 +119,8 @@ export default function ChatBot() {
       {/* Chat Window */}
       <div
         className={cn(
-          'fixed bottom-6 right-6 z-50 transition-all duration-500 origin-bottom-right',
-          isOpen
-            ? 'scale-100 opacity-100'
-            : 'scale-0 opacity-0 pointer-events-none'
+          "fixed bottom-6 right-6 z-50 transition-all duration-500 origin-bottom-right",
+          isOpen ? "scale-100 opacity-100" : "scale-0 opacity-0 pointer-events-none",
         )}
       >
         <div className="w-[380px] h-[600px] rounded-2xl backdrop-blur-2xl bg-background/65 border border-border/50 shadow-elegant overflow-hidden flex flex-col">
@@ -138,19 +136,14 @@ export default function ChatBot() {
                   <p className="text-xs text-muted-foreground">Always here to help</p>
                 </div>
               </div>
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => setIsOpen(false)}
-                className="hover:bg-background/50"
-              >
+              <Button variant="ghost" size="icon" onClick={() => setIsOpen(false)} className="hover:bg-background/50">
                 <X className="w-5 h-5" />
               </Button>
             </div>
           </div>
 
           {/* Messages */}
-          <div className="flex-1 overflow-y-auto p-4 space-y-4">
+          <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-background/65 backdrop-blur-sm border-b border-border">
             {messages.length === 0 && (
               <div className="h-full flex items-center justify-center">
                 <p className="text-muted-foreground text-center px-8">
@@ -159,26 +152,20 @@ export default function ChatBot() {
               </div>
             )}
             {messages.map((message) => (
-              <div
-                key={message.id}
-                className={cn(
-                  'flex',
-                  message.sender === 'user' ? 'justify-end' : 'justify-start'
-                )}
-              >
+              <div key={message.id} className={cn("flex", message.sender === "user" ? "justify-end" : "justify-start")}>
                 <div className="relative">
                   <div
                     className={cn(
-                      'max-w-[75%] rounded-2xl px-4 py-2 backdrop-blur-sm relative',
-                      message.sender === 'user'
-                        ? 'bg-gradient-to-br from-primary to-accent text-white ml-auto'
-                        : 'bg-muted/50 text-foreground'
+                      "max-w-[75%] rounded-2xl px-4 py-2 backdrop-blur-sm relative",
+                      message.sender === "user"
+                        ? "bg-gradient-to-br from-primary to-accent text-white ml-auto"
+                        : "bg-muted/50 text-foreground",
                     )}
                   >
                     <p className="text-sm leading-relaxed">{message.text}</p>
                   </div>
                   {/* Speech bubble tail */}
-                  {message.sender === 'user' ? (
+                  {message.sender === "user" ? (
                     <div className="absolute -right-1 bottom-2 w-3 h-3 bg-accent rotate-45 rounded-br-sm" />
                   ) : (
                     <div className="absolute -left-1 bottom-2 w-3 h-3 bg-muted/50 rotate-45 rounded-bl-sm" />
@@ -197,10 +184,7 @@ export default function ChatBot() {
           </div>
 
           {/* Input */}
-          <form
-            onSubmit={sendMessage}
-            className="p-4 border-t border-border/50 bg-background/50"
-          >
+          <form onSubmit={sendMessage} className="p-4 border-t border-border/50 bg-background/50">
             <div className="flex gap-2">
               <Input
                 value={input}
