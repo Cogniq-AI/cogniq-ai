@@ -71,7 +71,7 @@ const Projects = () => {
                       </Badge>
                     ))}
                   </div>
-                  <Button variant="ghost" className="text-primary hover:text-primary/80 p-0">
+                  <Button variant="ghost" className="text-primary hover:text-primary/80 p-0 hover:scale-105 transition-all">
                     {t('projects.read.more')}
                   </Button>
                 </CardContent>
@@ -87,7 +87,7 @@ const Projects = () => {
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
               {t('projects.cta.subtitle')}
             </p>
-            <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-glow">
+            <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-glow hover:scale-105 transition-all">
               {t('projects.cta.button')}
             </Button>
           </div>

@@ -49,7 +49,7 @@ const Navigation = () => {
             ))}
             <LanguageToggle />
             <ThemeToggle />
-            <Button asChild variant="outline" className="border-primary/50 text-primary hover:bg-primary hover:text-primary-foreground hover:shadow-glow transition-all">
+            <Button asChild variant="outline" className="border-primary/50 text-primary hover:bg-primary hover:text-primary-foreground hover:shadow-glow hover:scale-105 transition-all">
               <Link to="/contact">{t("nav.contact")}</Link>
             </Button>
           </div>
@@ -88,7 +88,7 @@ const Navigation = () => {
                 </Link>
               ))}
               <div className="px-3 py-2">
-                <Button asChild variant="outline" className="w-full border-primary/50 text-primary hover:bg-primary hover:text-primary-foreground hover:shadow-glow transition-all">
+                <Button asChild variant="outline" className="w-full border-primary/50 text-primary hover:bg-primary hover:text-primary-foreground hover:shadow-glow hover:scale-105 transition-all">
                   <Link to="/contact" onClick={() => setIsOpen(false)}>
                     {t("nav.contact")}
                   </Link>

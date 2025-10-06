@@ -60,7 +60,7 @@ const StatsSection = () => {
 
         {/* CTA */}
         <div className="text-center">
-          <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-glow">
+          <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-glow hover:scale-105 transition-all">
             <Link to="/cases">
               {t('stats.cta')}
             </Link>

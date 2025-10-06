@@ -99,7 +99,7 @@ const Services = () => {
                       </div>
                     ))}
                   </div>
-                  <Button variant="ghost" className="text-primary hover:text-primary/80 p-0">
+                  <Button variant="ghost" className="text-primary hover:text-primary/80 p-0 hover:scale-105 transition-all">
                     {t('services.more')}
                   </Button>
                 </CardContent>
@@ -140,10 +140,10 @@ const Services = () => {
             {t('services.final.cta.subtitle')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-glow">
+            <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-glow hover:scale-105 transition-all">
               {t('services.final.cta.contact')}
             </Button>
-            <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary/10">
+            <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary/10 hover:scale-105 transition-all">
               {t('services.final.cta.projects')}
             </Button>
           </div>

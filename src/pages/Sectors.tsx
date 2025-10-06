@@ -128,17 +128,17 @@ const Sectors = () => {
 
                 {/* Content */}
                 <div className={!isEven ? 'lg:col-start-1 lg:row-start-1' : ''}>
-                  <Card className="card-gradient shadow-card border-none h-full">
+                  <Card className="card-gradient shadow-intense border border-primary/20 h-full hover:shadow-glow transition-smooth backdrop-blur-sm bg-card/95">
                     <CardHeader>
                       <div className="flex items-center mb-4">
-                        <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mr-4">
-                          <IconComponent className="h-6 w-6 text-primary" />
+                        <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center mr-4 shadow-glow">
+                          <IconComponent className="h-7 w-7 text-primary" />
                         </div>
-                        <Badge variant="secondary" className="bg-primary/10 text-primary border-primary/20">
+                        <Badge variant="secondary" className="bg-primary/15 text-primary border-primary/30 shadow-sm">
                           {t('specializations.focus')}
                         </Badge>
                       </div>
-                      <CardTitle className="text-3xl font-bold mb-4">
+                      <CardTitle className="text-3xl font-bold mb-4 gradient-text">
                         {sector.title}
                       </CardTitle>
                     </CardHeader>
@@ -166,10 +166,10 @@ const Sectors = () => {
                       </div>
 
                       <div className="flex flex-col sm:flex-row gap-3">
-                        <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">
+                        <Button className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-glow hover:scale-105 transition-all">
                           {t('specializations.more.about')} {sector.title.toLowerCase()}
                         </Button>
-                        <Button variant="outline" className="border-primary text-primary hover:bg-primary/10">
+                        <Button variant="outline" className="border-primary text-primary hover:bg-primary/10 hover:scale-105 transition-all">
                           {t('specializations.view.projects')}
                         </Button>
                       </div>
@@ -183,14 +183,14 @@ const Sectors = () => {
 
         {/* Additional Information */}
         <div className="mt-20 text-center">
-          <div className="bg-card-gradient rounded-2xl p-12 shadow-card">
+          <div className="bg-card-gradient rounded-2xl p-12 shadow-intense border border-primary/20">
             <h3 className="text-2xl font-bold mb-4">
               {t('specializations.not.listed.title')}
             </h3>
             <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
               {t('specializations.not.listed.desc')}
             </p>
-            <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-glow">
+            <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-glow hover:scale-105 transition-all">
               {t('specializations.not.listed.cta')}
             </Button>
           </div>

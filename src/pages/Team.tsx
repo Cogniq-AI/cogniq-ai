@@ -156,10 +156,10 @@ const Team = () => {
                   </div>
                   
                   <div className="flex justify-center gap-2">
-                    <Button size="sm" variant="ghost" className="text-primary hover:text-primary/80">
+                    <Button size="sm" variant="ghost" className="text-primary hover:text-primary/80 hover:scale-105 transition-all">
                       <Linkedin className="h-4 w-4" />
                     </Button>
-                    <Button size="sm" variant="ghost" className="text-primary hover:text-primary/80">
+                    <Button size="sm" variant="ghost" className="text-primary hover:text-primary/80 hover:scale-105 transition-all">
                       <Mail className="h-4 w-4" />
                     </Button>
                   </div>
@@ -178,10 +178,10 @@ const Team = () => {
             We zijn altijd op zoek naar getalenteerde professionals die willen bijdragen aan de toekomst van AI.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-glow">
+            <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-glow hover:scale-105 transition-all">
               Bekijk vacatures
             </Button>
-            <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary/10">
+            <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary/10 hover:scale-105 transition-all">
               Neem contact op
             </Button>
           </div>

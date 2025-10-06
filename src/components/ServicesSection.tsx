@@ -98,7 +98,7 @@ const ServicesSection = () => {
         </div>
 
         <div className="text-center mt-12">
-          <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-glow">
+          <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-glow hover:scale-105 transition-all">
             <Link to="/diensten">
               {t('services.cta')}
             </Link>

@@ -126,10 +126,10 @@ const Career = () => {
                 ))}
               </div>
             </div>
-            <div className="bg-card-gradient rounded-2xl p-8 shadow-card">
+            <div className="bg-card-gradient rounded-2xl p-8 shadow-intense border border-primary/20 backdrop-blur-sm bg-card/95">
           <div className="text-center mb-6">
-            <div className="text-6xl font-bold gradient-text mb-2">40+</div>
-            <p className="text-muted-foreground">Experts in ons team</p>
+            <div className="text-6xl font-bold gradient-text mb-2 drop-shadow-glow">40+</div>
+            <p className="text-muted-foreground font-medium">Experts in ons team</p>
           </div>
               <div className="grid grid-cols-2 gap-4 text-center">
                 <div>
@@ -154,10 +154,10 @@ const Career = () => {
             {benefits.map((benefit, index) => {
               const IconComponent = benefit.icon;
               return (
-                <Card key={index} className="card-gradient shadow-card hover:shadow-glow transition-smooth text-center">
+                <Card key={index} className="card-gradient shadow-card hover:shadow-glow transition-smooth text-center border border-primary/10 backdrop-blur-sm bg-card/95">
                   <CardContent className="pt-6">
-                    <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                      <IconComponent className="h-6 w-6 text-primary" />
+                    <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center mx-auto mb-4 shadow-glow">
+                      <IconComponent className="h-7 w-7 text-primary" />
                     </div>
                     <h3 className="font-semibold mb-2">{benefit.title}</h3>
                     <p className="text-sm text-muted-foreground">{benefit.description}</p>
@@ -176,7 +176,7 @@ const Career = () => {
 
           {/* Featured Position */}
           {openPositions.filter(job => job.featured).map((job, index) => (
-            <Card key={index} className="card-gradient shadow-card hover:shadow-glow transition-smooth mb-8 overflow-hidden">
+            <Card key={index} className="card-gradient shadow-intense hover:shadow-glow transition-smooth mb-8 overflow-hidden border border-primary/20 backdrop-blur-sm bg-card/95">
               <div className="bg-gradient-to-r from-primary/10 to-accent/10 p-4">
                 <Badge className="bg-accent text-accent-foreground">Featured</Badge>
               </div>
@@ -219,7 +219,7 @@ const Career = () => {
                     }
                   </div>
                 </div>
-                <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-glow">
+                <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-glow hover:scale-105 transition-all">
                   Solliciteer nu
                 </Button>
               </CardContent>
@@ -230,7 +230,7 @@ const Career = () => {
           {/* Other Positions */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {openPositions.filter(job => !job.featured).map((job, index) => (
-              <Card key={index} className="card-gradient shadow-card hover:shadow-glow transition-smooth">
+              <Card key={index} className="card-gradient shadow-card hover:shadow-glow transition-smooth border border-primary/10 backdrop-blur-sm bg-card/95">
                 <CardHeader>
                   <div className="flex items-center justify-between mb-2">
                     <Badge variant="secondary" className="bg-primary/10 text-primary border-primary/20">
@@ -269,7 +269,7 @@ const Career = () => {
                       </Badge>
                     )}
                   </div>
-                  <Button variant="outline" className="w-full border-primary text-primary hover:bg-primary/10">
+                  <Button variant="outline" className="w-full border-primary text-primary hover:bg-primary/10 hover:scale-105 transition-all">
                     Meer details
                   </Button>
                 </CardContent>
@@ -280,7 +280,7 @@ const Career = () => {
         </div>
 
         {/* Application Process */}
-        <div className="text-center bg-card-gradient rounded-2xl p-12 shadow-card">
+        <div className="text-center bg-card-gradient rounded-2xl p-12 shadow-intense border border-primary/20 backdrop-blur-sm bg-card/95">
           <h2 className="text-3xl font-bold mb-6">
             Sollicitatieproces
           </h2>
@@ -304,7 +304,7 @@ const Career = () => {
           <p className="text-muted-foreground mb-6">
             Zie je geen passende functie? Stuur ons een open sollicitatie - we horen graag van getalenteerde professionals!
           </p>
-          <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-glow">
+          <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-glow hover:scale-105 transition-all">
             Open sollicitatie
           </Button>
         </div>

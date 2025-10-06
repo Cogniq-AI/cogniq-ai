@@ -149,7 +149,7 @@ const Contact = () => {
                 />
               </div>
               
-              <Button size="lg" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground shadow-glow group">
+              <Button size="lg" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground shadow-glow group hover:scale-105 transition-all">
                 <Send className="mr-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                 Verstuur bericht
               </Button>
@@ -248,7 +248,7 @@ const Contact = () => {
             </div>
           </div>
           <div className="mt-8">
-            <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary/10">
+            <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary/10 hover:scale-105 transition-all">
               Meer veelgestelde vragen
             </Button>
           </div>

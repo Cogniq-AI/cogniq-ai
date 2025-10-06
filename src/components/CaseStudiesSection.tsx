@@ -82,7 +82,7 @@ const CaseStudiesSection = () => {
                   ))}
                 </div>
 
-                <Button variant="ghost" className="text-primary hover:text-primary/80 p-0 group">
+                <Button variant="ghost" className="text-primary hover:text-primary/80 p-0 group hover:scale-105 transition-all">
                   {t('cases.view')}
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Button>
@@ -92,7 +92,7 @@ const CaseStudiesSection = () => {
         </div>
 
         <div className="text-center mt-12">
-          <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-glow">
+          <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-glow hover:scale-105 transition-all">
             <Link to="/projecten">
               {t('cases.cta')}
             </Link>

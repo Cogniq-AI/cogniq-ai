@@ -127,7 +127,7 @@ const News = () => {
                       <User className="h-4 w-4 mr-1" />
                       {item.author} • {item.readTime} read
                     </div>
-                    <Button className="bg-primary hover:bg-primary/90 text-primary-foreground group">
+                    <Button className="bg-primary hover:bg-primary/90 text-primary-foreground group hover:scale-105 transition-all">
                       Lees meer
                       <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                     </Button>
@@ -167,7 +167,7 @@ const News = () => {
                   </div>
                   <span className="text-sm text-muted-foreground">{item.readTime}</span>
                 </div>
-                <Button variant="ghost" className="w-full mt-4 text-primary hover:text-primary/80 group">
+                <Button variant="ghost" className="w-full mt-4 text-primary hover:text-primary/80 group hover:scale-105 transition-all">
                   Lees meer
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Button>
@@ -190,7 +190,7 @@ const News = () => {
               placeholder="Uw e-mailadres"
               className="flex-1 px-4 py-2 rounded-lg bg-input border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
             />
-            <Button className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-glow">
+            <Button className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-glow hover:scale-105 transition-all">
               Abonneren
             </Button>
           </div>
