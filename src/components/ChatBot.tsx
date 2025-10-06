@@ -159,7 +159,7 @@ export default function ChatBot() {
                       "max-w-[75%] rounded-2xl px-4 py-2 backdrop-blur-sm relative",
                       message.sender === "user"
                         ? "bg-gradient-to-br from-primary to-accent text-white ml-auto"
-                        : "bg-muted/50 text-foreground",
+                        : "bg-muted/80 text-foreground",
                     )}
                   >
                     <p className="text-sm leading-relaxed">{message.text}</p>
@@ -169,7 +169,7 @@ export default function ChatBot() {
             ))}
             {isLoading && (
               <div className="flex justify-start">
-                <div className="bg-muted/50 rounded-2xl px-4 py-2 backdrop-blur-sm">
+                <div className="bg-muted/80 rounded-2xl px-4 py-2 backdrop-blur-sm">
                   <Loader2 className="w-4 h-4 animate-spin text-muted-foreground" />
                 </div>
               </div>
