@@ -44,7 +44,9 @@ const ParticleField = () => {
 
       draw() {
         if (!ctx) return;
-        ctx.fillStyle = 'rgba(0, 217, 245, 0.6)';
+        // Check if light mode
+        const isLight = document.documentElement.classList.contains('light');
+        ctx.fillStyle = isLight ? 'rgba(0, 150, 180, 0.8)' : 'rgba(0, 217, 245, 0.6)';
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
         ctx.fill();
@@ -75,8 +77,10 @@ const ParticleField = () => {
           const distance = Math.sqrt(dx * dx + dy * dy);
 
           if (distance < 120) {
-            ctx.strokeStyle = `rgba(0, 217, 245, ${0.3 * (1 - distance / 120)})`;
-            ctx.lineWidth = 1;
+            const isLight = document.documentElement.classList.contains('light');
+            const alpha = 0.4 * (1 - distance / 120);
+            ctx.strokeStyle = isLight ? `rgba(0, 150, 180, ${alpha})` : `rgba(0, 217, 245, ${alpha * 0.75})`;
+            ctx.lineWidth = isLight ? 1.5 : 1;
             ctx.beginPath();
             ctx.moveTo(p1.x, p1.y);
             ctx.lineTo(p2.x, p2.y);
@@ -98,7 +102,7 @@ const ParticleField = () => {
   return (
     <canvas
       ref={canvasRef}
-      className="absolute inset-0 pointer-events-none opacity-40"
+      className="absolute inset-0 pointer-events-none opacity-70 dark:opacity-40"
     />
   );
 };

@@ -12,7 +12,7 @@ const HeroSection = () => {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         <img src={heroImage} alt="Professional AI technology workspace" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 hero-gradient opacity-80" />
+        <div className="absolute inset-0 hero-gradient opacity-70 dark:opacity-80" />
       </div>
 
       {/* Animated Elements */}
