@@ -100,8 +100,9 @@ const Services = () => {
                       </div>
                     ))}
                   </div>
-                  <Button variant="info" className="relative z-10">
-                    {t('services.more')}
+                  <Button variant="info" className="relative z-10 group/btn">
+                    <span className="relative z-10">{t('services.more')}</span>
+                    <span className="ml-1 inline-block transition-transform group-hover/btn:translate-x-1 relative z-10">→</span>
                   </Button>
                 </CardContent>
               </Card>
