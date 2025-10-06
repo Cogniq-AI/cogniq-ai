@@ -44,7 +44,7 @@ All colors MUST be HSL.
     --tech-gradient: linear-gradient(90deg, hsl(190 95% 55% / 0.15), hsl(280 85% 65% / 0.15));
     --card-gradient: linear-gradient(145deg, hsl(230 35% 10%), hsl(230 30% 12%));
     
-    --shadow-glow: 0 10px 60px hsl(190 95% 55% / 0.35);
+    --shadow-glow: 0 8px 30px hsl(190 95% 55% / 0.15);
     --shadow-card: 0 10px 40px hsl(230 40% 7% / 0.6);
     --shadow-intense: 0 0 80px hsl(190 95% 55% / 0.4), 0 0 40px hsl(280 85% 65% / 0.3);
     
@@ -98,7 +98,7 @@ All colors MUST be HSL.
     --tech-gradient: linear-gradient(90deg, hsl(280 85% 55% / 0.08), hsl(190 95% 50% / 0.06));
     --card-gradient: linear-gradient(145deg, hsl(210 30% 98%), hsl(0 0% 100%));
     
-    --shadow-glow: 0 10px 60px hsl(280 85% 55% / 0.4);
+    --shadow-glow: 0 8px 30px hsl(280 85% 55% / 0.2);
     --shadow-card: 0 8px 30px hsl(230 30% 50% / 0.08);
     --shadow-intense: 0 0 60px hsl(280 85% 55% / 0.4), 0 0 30px hsl(190 95% 50% / 0.25);
   }
@@ -167,7 +167,7 @@ All colors MUST be HSL.
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    filter: drop-shadow(0 0 20px hsl(190 95% 55% / 0.3));
+    filter: drop-shadow(0 0 10px hsl(190 95% 55% / 0.15));
   }
 
   .light .gradient-text {
@@ -175,7 +175,7 @@ All colors MUST be HSL.
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    filter: drop-shadow(0 0 20px hsl(280 85% 55% / 0.35));
+    filter: drop-shadow(0 0 10px hsl(280 85% 55% / 0.2));
   }
 
   .hover-lift {

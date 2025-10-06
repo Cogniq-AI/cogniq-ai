@@ -17,8 +17,8 @@ const AnimatedGrid = () => {
       </div>
 
       {/* Glowing orbs - subtle in light mode */}
-      <div className="absolute top-20 left-20 w-96 h-96 rounded-full blur-3xl animate-pulse opacity-0 dark:opacity-100" style={{ background: 'hsl(190 95% 55% / 0.3)' }} />
-      <div className="absolute bottom-20 right-20 w-96 h-96 rounded-full blur-3xl animate-pulse opacity-0 dark:opacity-100" style={{ background: 'hsl(280 85% 65% / 0.3)', animationDelay: '1s' }} />
+      <div className="absolute top-20 left-20 w-96 h-96 rounded-full blur-3xl animate-pulse opacity-0 dark:opacity-50" style={{ background: 'hsl(190 95% 55% / 0.15)' }} />
+      <div className="absolute bottom-20 right-20 w-96 h-96 rounded-full blur-3xl animate-pulse opacity-0 dark:opacity-50" style={{ background: 'hsl(280 85% 65% / 0.15)', animationDelay: '1s' }} />
       
       {/* Floating dots - hidden in light mode */}
       {[...Array(20)].map((_, i) => (
