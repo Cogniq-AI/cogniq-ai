@@ -143,7 +143,7 @@ export default function ChatBot() {
           </div>
 
           {/* Messages */}
-          <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-background/35 backdrop-blur-sm border-b border-border">
+          <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-background/35 backdrop-blur-sm border-b border-border chat-scrollbar">
             {messages.length === 0 && (
               <div className="h-full flex items-center justify-center">
                 <p className="text-muted-foreground text-center px-8">
