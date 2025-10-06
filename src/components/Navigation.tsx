@@ -5,6 +5,7 @@ import { Menu, X } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
 import LanguageToggle from "./LanguageToggle";
 import { useLanguage } from "@/contexts/LanguageContext";
+import congiqLogo from "@/assets/congiq-logo.png";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -28,8 +29,9 @@ const Navigation = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="text-2xl font-black gradient-text">Cogniq AI</div>
+          <Link to="/" className="flex items-center space-x-3 group">
+            <img src={congiqLogo} alt="Congiq AI" className="h-10 w-10 transition-transform group-hover:scale-110" />
+            <div className="text-2xl font-black gradient-text">Congiq AI</div>
           </Link>
 
           {/* Desktop Navigation */}
@@ -47,7 +49,7 @@ const Navigation = () => {
             ))}
             <LanguageToggle />
             <ThemeToggle />
-            <Button asChild variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
+            <Button asChild variant="outline" className="border-primary/50 text-primary hover:bg-primary hover:text-primary-foreground hover:shadow-glow transition-all">
               <Link to="/contact">{t("nav.contact")}</Link>
             </Button>
           </div>
@@ -86,7 +88,7 @@ const Navigation = () => {
                 </Link>
               ))}
               <div className="px-3 py-2">
-                <Button asChild variant="outline" className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground">
+                <Button asChild variant="outline" className="w-full border-primary/50 text-primary hover:bg-primary hover:text-primary-foreground hover:shadow-glow transition-all">
                   <Link to="/contact" onClick={() => setIsOpen(false)}>
                     {t("nav.contact")}
                   </Link>

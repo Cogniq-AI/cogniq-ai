@@ -8,43 +8,43 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 220 30% 5%;
-    --foreground: 0 0% 100%;
+    --background: 230 25% 6%;
+    --foreground: 180 100% 95%;
 
-    --card: 220 20% 12%;
-    --card-foreground: 0 0% 95%;
+    --card: 230 20% 10%;
+    --card-foreground: 180 50% 95%;
 
-    --popover: 220 20% 12%;
-    --popover-foreground: 0 0% 95%;
+    --popover: 230 20% 10%;
+    --popover-foreground: 180 50% 95%;
 
-    --primary: 217 91% 60%;
-    --primary-foreground: 220 25% 8%;
+    --primary: 190 95% 55%;
+    --primary-foreground: 230 25% 6%;
 
-    --secondary: 220 15% 20%;
-    --secondary-foreground: 0 0% 95%;
+    --secondary: 270 70% 55%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 220 15% 18%;
-    --muted-foreground: 220 5% 65%;
+    --muted: 230 15% 15%;
+    --muted-foreground: 180 20% 65%;
 
-    --accent: 25 95% 53%;
-    --accent-foreground: 220 25% 8%;
+    --accent: 280 85% 65%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 220 15% 20%;
-    --input: 220 15% 15%;
-    --ring: 217 91% 60%;
+    --border: 190 50% 20%;
+    --input: 230 20% 12%;
+    --ring: 190 95% 55%;
 
     --radius: 0.5rem;
 
-    /* B12 Custom Design Tokens */
-    --hero-gradient: linear-gradient(135deg, hsl(220 25% 8%), hsl(220 20% 12%));
-    --tech-gradient: linear-gradient(90deg, hsl(217 91% 60% / 0.1), hsl(25 95% 53% / 0.1));
-    --card-gradient: linear-gradient(135deg, hsl(220 20% 12%), hsl(220 15% 18%));
+    /* Congiq AI Custom Design Tokens */
+    --hero-gradient: linear-gradient(135deg, hsl(230 25% 6%), hsl(230 20% 10%), hsl(270 40% 15%));
+    --tech-gradient: linear-gradient(90deg, hsl(190 95% 55% / 0.15), hsl(280 85% 65% / 0.15));
+    --card-gradient: linear-gradient(135deg, hsl(230 20% 10%), hsl(230 15% 15%));
     
-    --shadow-glow: 0 10px 40px hsl(217 91% 60% / 0.15);
-    --shadow-card: 0 4px 20px hsl(220 25% 8% / 0.3);
+    --shadow-glow: 0 10px 50px hsl(190 95% 55% / 0.3);
+    --shadow-card: 0 8px 30px hsl(230 25% 6% / 0.5);
     
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     
@@ -70,40 +70,40 @@ All colors MUST be HSL.
   }
 
   .light {
-    --background: 220 8% 92%;
-    --foreground: 220 25% 8%;
+    --background: 200 30% 96%;
+    --foreground: 230 40% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 220 25% 8%;
+    --card-foreground: 230 40% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 25% 8%;
+    --popover-foreground: 230 40% 15%;
 
-    --primary: 217 91% 60%;
+    --primary: 190 90% 45%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 220 8% 94%;
-    --secondary-foreground: 220 25% 8%;
+    --secondary: 270 60% 50%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 220 8% 94%;
-    --muted-foreground: 220 10% 45%;
+    --muted: 200 15% 92%;
+    --muted-foreground: 230 20% 40%;
 
-    --accent: 25 95% 53%;
+    --accent: 280 75% 55%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 220 8% 88%;
-    --input: 220 8% 92%;
-    --ring: 217 91% 60%;
+    --border: 190 30% 85%;
+    --input: 200 20% 90%;
+    --ring: 190 90% 45%;
 
-    --hero-gradient: linear-gradient(135deg, transparent, transparent);
-    --tech-gradient: linear-gradient(90deg, hsl(217 91% 60% / 0.08), hsl(25 95% 53% / 0.08));
-    --card-gradient: linear-gradient(135deg, hsl(0 0% 100%), hsl(220 12% 92%));
+    --hero-gradient: linear-gradient(135deg, hsl(200 50% 98%), hsl(280 40% 98%));
+    --tech-gradient: linear-gradient(90deg, hsl(190 90% 45% / 0.1), hsl(280 75% 55% / 0.1));
+    --card-gradient: linear-gradient(135deg, hsl(0 0% 100%), hsl(200 30% 96%));
     
-    --shadow-glow: 0 10px 40px hsl(217 91% 60% / 0.15);
-    --shadow-card: 0 8px 25px hsl(220 15% 60% / 0.15);
+    --shadow-glow: 0 10px 40px hsl(190 90% 45% / 0.2);
+    --shadow-card: 0 8px 25px hsl(230 25% 80% / 0.2);
   }
 }
 
@@ -150,14 +150,14 @@ All colors MUST be HSL.
   
   .hero-text {
     @apply text-6xl md:text-7xl lg:text-8xl font-black tracking-tight leading-none;
-    background: linear-gradient(135deg, hsl(var(--foreground)), hsl(217 91% 70%));
+    background: linear-gradient(135deg, hsl(var(--foreground)), hsl(190 95% 65%));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
   
   .gradient-text {
-    background: linear-gradient(135deg, hsl(217 91% 60%), hsl(217 80% 70%));
+    background: linear-gradient(135deg, hsl(190 95% 55%), hsl(280 85% 65%));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
