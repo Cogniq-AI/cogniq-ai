@@ -57,9 +57,28 @@ export default function ChatBot() {
 
       const data = await response.json();
       
+      // Extract the actual output from the nested webhook response
+      let botText = 'Message received';
+      try {
+        // Handle the unusual nested structure from n8n webhook
+        const firstKey = Object.keys(data)[0];
+        if (firstKey && data[firstKey]) {
+          const secondKey = Object.keys(data[firstKey])[0];
+          if (secondKey && data[firstKey][secondKey]?.output) {
+            botText = data[firstKey][secondKey].output;
+          }
+        }
+        // Fallback to common response fields
+        if (botText === 'Message received') {
+          botText = data.response || data.message || data.output || 'Message received';
+        }
+      } catch (e) {
+        console.error('Error parsing webhook response:', e);
+      }
+      
       const botMessage: Message = {
         id: (Date.now() + 1).toString(),
-        text: data.response || data.message || 'Message received',
+        text: botText,
         sender: 'bot',
         timestamp: new Date(),
       };
