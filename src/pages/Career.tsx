@@ -4,8 +4,10 @@ import { Badge } from "@/components/ui/badge";
 import { MapPin, Clock, Euro, Users, Coffee, Laptop, Heart, Trophy } from "lucide-react";
 
 import Footer from "@/components/Footer";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Career = () => {
+  const { t } = useLanguage();
   const openPositions = [
     {
       title: "Senior AI Engineer",
@@ -62,37 +64,37 @@ const Career = () => {
   const benefits = [
     {
       icon: Laptop,
-      title: "Flexibel werken",
-      description: "Hybride werkmodel met moderne apparatuur en flexibele werkuren"
+      titleKey: "career.benefit.flexible.title",
+      descKey: "career.benefit.flexible.desc"
     },
     {
       icon: Users,
-      title: "Leren & ontwikkeling",
-      description: "Conferenties, trainingen en tijd voor persoonlijke projecten"
+      titleKey: "career.benefit.learning.title",
+      descKey: "career.benefit.learning.desc"
     },
     {
       icon: Heart,
-      title: "Werk-leven balans",
-      description: "Ruime vakantieregeling en mentale gezondheidsondersteuning"
+      titleKey: "career.benefit.balance.title",
+      descKey: "career.benefit.balance.desc"
     },
     {
       icon: Trophy,
-      title: "Competitief pakket",
-      description: "Marktconform salaris, bonussen en aandelen opties"
+      titleKey: "career.benefit.package.title",
+      descKey: "career.benefit.package.desc"
     },
     {
       icon: Coffee,
-      title: "Geweldige cultuur",
-      description: "Team events, gratis lunch en gezellige kantooromgeving"
+      titleKey: "career.benefit.culture.title",
+      descKey: "career.benefit.culture.desc"
     }
   ];
 
   const workingAtB12 = [
-    "Werken aan cutting-edge AI projecten voor toonaangevende bedrijven",
-    "Samenwerken met een multidisciplinair team van experts",
-    "Bijdragen aan open-source projecten en onderzoekspublicaties",
-    "Persoonlijke groei in een dynamische en innovatieve omgeving",
-    "Impact maken op de toekomst van AI in verschillende sectoren"
+    t('career.why.item1'),
+    t('career.why.item2'),
+    t('career.why.item3'),
+    t('career.why.item4'),
+    t('career.why.item5')
   ];
 
   return (
@@ -102,10 +104,10 @@ const Career = () => {
         {/* Header */}
         <div className="text-center mb-16">
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              Carrière bij <span className="gradient-text">Cogniq AI</span>
+              {t('career.title')} <span className="gradient-text">{t('career.title.highlight')}</span>
             </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Word deel van een team dat de toekomst van AI vormgeeft. Bij Cogniq AI combineren we technische excellentie met een geweldige werkcultuur.
+            {t('career.subtitle')}
           </p>
         </div>
 
@@ -114,7 +116,7 @@ const Career = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
             <h2 className="text-3xl font-bold mb-6">
-              Waarom werken bij <span className="gradient-text">Cogniq AI</span>?
+              {t('career.why.title')} <span className="gradient-text">{t('career.why.highlight')}</span>?
             </h2>
               <div className="space-y-4">
                 {workingAtB12.map((item, index) => (
@@ -130,16 +132,16 @@ const Career = () => {
             <div className="bg-card-gradient rounded-2xl p-8 shadow-intense border border-primary/20 backdrop-blur-sm bg-card/95">
           <div className="text-center mb-6">
             <div className="text-6xl font-bold gradient-text mb-2 drop-shadow-glow">40+</div>
-            <p className="text-muted-foreground font-medium">Experts in ons team</p>
+            <p className="text-muted-foreground font-medium">{t('career.experts')}</p>
           </div>
               <div className="grid grid-cols-2 gap-4 text-center">
                 <div>
                   <div className="text-2xl font-bold text-foreground">12+</div>
-                  <p className="text-sm text-muted-foreground">Jaar ervaring</p>
+                  <p className="text-sm text-muted-foreground">{t('career.experience')}</p>
                 </div>
                 <div>
                   <div className="text-2xl font-bold text-foreground">400+</div>
-                  <p className="text-sm text-muted-foreground">Projecten</p>
+                  <p className="text-sm text-muted-foreground">{t('career.projects.count')}</p>
                 </div>
               </div>
             </div>
@@ -149,7 +151,7 @@ const Career = () => {
         {/* Benefits */}
         <div className="mb-20">
           <h2 className="text-3xl font-bold text-center mb-12">
-            Onze <span className="gradient-text">Voordelen</span>
+            {t('career.benefits.title')} <span className="gradient-text">{t('career.benefits.highlight')}</span>
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {benefits.map((benefit, index) => {
@@ -160,8 +162,8 @@ const Career = () => {
                     <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center mx-auto mb-4 shadow-glow">
                       <IconComponent className="h-7 w-7 text-primary" />
                     </div>
-                    <h3 className="font-semibold mb-2">{benefit.title}</h3>
-                    <p className="text-sm text-muted-foreground">{benefit.description}</p>
+                    <h3 className="font-semibold mb-2">{t(benefit.titleKey)}</h3>
+                    <p className="text-sm text-muted-foreground">{t(benefit.descKey)}</p>
                   </CardContent>
                 </Card>
               );
@@ -172,14 +174,14 @@ const Career = () => {
         {/* Open Positions */}
         <div className="mb-20">
           <h2 className="text-3xl font-bold text-center mb-12">
-            Open <span className="gradient-text">Posities</span>
+            {t('career.positions.title')} <span className="gradient-text">{t('career.positions.highlight')}</span>
           </h2>
 
           {/* Featured Position */}
           {openPositions.filter(job => job.featured).map((job, index) => (
             <Card key={index} className="card-gradient shadow-intense hover:shadow-glow transition-smooth mb-8 overflow-hidden border border-primary/20 backdrop-blur-sm bg-card/95">
               <div className="bg-gradient-to-r from-primary/10 to-accent/10 p-4">
-                <Badge className="bg-accent text-accent-foreground">Featured</Badge>
+                <Badge className="bg-accent text-accent-foreground">{t('career.positions.featured')}</Badge>
               </div>
               <CardHeader>
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
@@ -210,7 +212,7 @@ const Career = () => {
                   {job.description}
                 </CardDescription>
                 <div className="mb-6">
-                  <h4 className="font-semibold mb-3">Vereisten:</h4>
+                  <h4 className="font-semibold mb-3">{t('career.positions.requirements')}</h4>
                   <div className="flex flex-wrap gap-2">
                     {job.requirements.map((req, reqIndex) => (
                       <Badge key={reqIndex} variant="outline" className="text-sm">
@@ -221,7 +223,7 @@ const Career = () => {
                   </div>
                 </div>
                 <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-glow hover:scale-105 transition-all">
-                  Solliciteer nu
+                  {t('career.positions.apply')}
                 </Button>
               </CardContent>
             </Card>
@@ -271,7 +273,7 @@ const Career = () => {
                     )}
                   </div>
                   <Button variant="outline" className="w-full border-primary text-primary hover:bg-primary/10 hover:scale-105 transition-all">
-                    Meer details
+                    {t('career.positions.details')}
                   </Button>
                 </CardContent>
               </Card>
@@ -283,30 +285,30 @@ const Career = () => {
         {/* Application Process */}
         <div className="text-center bg-card-gradient rounded-2xl p-12 shadow-intense border border-primary/20 backdrop-blur-sm bg-card/95">
           <h2 className="text-3xl font-bold mb-6">
-            Sollicitatieproces
+            {t('career.process.title')}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
             {[
-              { step: "1", title: "Sollicitatie", description: "Verstuur je CV en motivatiebrief" },
-              { step: "2", title: "Screening", description: "Eerste gesprek met HR" },
-              { step: "3", title: "Technisch interview", description: "Gesprek met het team" },
-              { step: "4", title: "Aanbod", description: "Welkom bij B12!" }
+              { step: "1", titleKey: "career.process.step1.title", descKey: "career.process.step1.desc" },
+              { step: "2", titleKey: "career.process.step2.title", descKey: "career.process.step2.desc" },
+              { step: "3", titleKey: "career.process.step3.title", descKey: "career.process.step3.desc" },
+              { step: "4", titleKey: "career.process.step4.title", descKey: "career.process.step4.desc" }
             ].map((phase, index) => (
               <div key={index} className="text-center">
                 <div className="w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center mx-auto mb-4 font-bold text-lg">
                   {phase.step}
                 </div>
-                <h3 className="font-semibold mb-2">{phase.title}</h3>
-                <p className="text-sm text-muted-foreground">{phase.description}</p>
+                <h3 className="font-semibold mb-2">{t(phase.titleKey)}</h3>
+                <p className="text-sm text-muted-foreground">{t(phase.descKey)}</p>
               </div>
             ))
             }
           </div>
           <p className="text-muted-foreground mb-6">
-            Zie je geen passende functie? Stuur ons een open sollicitatie - we horen graag van getalenteerde professionals!
+            {t('career.process.open.text')}
           </p>
           <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-glow hover:scale-105 transition-all">
-            Open sollicitatie
+            {t('career.process.open.cta')}
           </Button>
         </div>
       </div>

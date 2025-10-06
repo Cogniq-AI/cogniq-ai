@@ -3,9 +3,11 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Linkedin, Mail } from "lucide-react";
 import Footer from "@/components/Footer";
+import { useLanguage } from "@/contexts/LanguageContext";
 import teamImage from "@/assets/team-collaboration.jpg";
 
 const Team = () => {
+  const { t } = useLanguage();
   const teamMembers = [
     {
       name: "Dr. Sarah Johnson",
@@ -105,7 +107,7 @@ const Team = () => {
         {/* Departments */}
         <div className="mb-20">
           <h2 className="text-3xl font-bold text-center mb-12">
-            Onze <span className="gradient-text">Afdelingen</span>
+            {t('team.departments.title')} <span className="gradient-text">{t('team.departments.highlight')}</span>
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {departments.map((dept, index) => (
@@ -173,17 +175,17 @@ const Team = () => {
         {/* Join Our Team */}
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold mb-6">
-            Word deel van ons team
+            {t('team.join.title')}
           </h2>
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            We zijn altijd op zoek naar getalenteerde professionals die willen bijdragen aan de toekomst van AI.
+            {t('team.join.desc')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-glow hover:scale-105 transition-all">
-              Bekijk vacatures
+              {t('team.join.cta1')}
             </Button>
             <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary/10 hover:scale-105 transition-all">
-              Neem contact op
+              {t('team.join.cta2')}
             </Button>
           </div>
         </div>
