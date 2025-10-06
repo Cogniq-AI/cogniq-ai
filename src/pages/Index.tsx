@@ -7,6 +7,7 @@ import SectorsPreview from "@/components/SectorsPreview";
 import PartnersCarousel from "@/components/PartnersCarousel";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
+import ChatBot from "@/components/ChatBot";
 
 const Index = () => {
   return (
@@ -20,6 +21,7 @@ const Index = () => {
       <PartnersCarousel />
       <CTASection />
       <Footer />
+      <ChatBot />
     </div>
   );
 };
