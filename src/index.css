@@ -75,32 +75,32 @@ All colors MUST be HSL.
     --popover: 210 30% 98%;
     --popover-foreground: 230 50% 20%;
 
-    --primary: 190 100% 45%;
+    --primary: 280 85% 55%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 280 90% 62%;
+    --secondary: 190 95% 50%;
     --secondary-foreground: 0 0% 100%;
 
     --muted: 210 25% 96%;
     --muted-foreground: 230 30% 50%;
 
-    --accent: 190 100% 95%;
-    --accent-foreground: 190 100% 35%;
+    --accent: 280 90% 92%;
+    --accent-foreground: 280 85% 40%;
 
     --destructive: 0 75% 52%;
     --destructive-foreground: 0 0% 100%;
 
     --border: 210 20% 90%;
     --input: 210 25% 96%;
-    --ring: 190 100% 45%;
+    --ring: 280 85% 55%;
 
     --hero-gradient: linear-gradient(135deg, hsl(0 0% 100%), hsl(210 30% 98%), hsl(280 60% 98%));
-    --tech-gradient: linear-gradient(90deg, hsl(190 100% 45% / 0.06), hsl(280 90% 62% / 0.06));
+    --tech-gradient: linear-gradient(90deg, hsl(280 85% 55% / 0.08), hsl(190 95% 50% / 0.06));
     --card-gradient: linear-gradient(145deg, hsl(210 30% 98%), hsl(0 0% 100%));
     
-    --shadow-glow: 0 10px 50px hsl(190 100% 45% / 0.3);
+    --shadow-glow: 0 10px 60px hsl(280 85% 55% / 0.4);
     --shadow-card: 0 8px 30px hsl(230 30% 50% / 0.08);
-    --shadow-intense: 0 0 60px hsl(190 100% 45% / 0.35), 0 0 30px hsl(280 90% 62% / 0.2);
+    --shadow-intense: 0 0 60px hsl(280 85% 55% / 0.4), 0 0 30px hsl(190 95% 50% / 0.25);
   }
 }
 
@@ -155,11 +155,11 @@ All colors MUST be HSL.
   }
   
   .light .hero-text {
-    background: linear-gradient(135deg, hsl(230 50% 20%), hsl(190 100% 40%), hsl(280 90% 58%));
+    background: linear-gradient(135deg, hsl(230 50% 20%), hsl(280 85% 50%), hsl(190 95% 45%));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    text-shadow: 0 0 30px hsl(190 100% 45% / 0.4);
+    text-shadow: 0 0 30px hsl(280 85% 55% / 0.4);
   }
   
   .gradient-text {
@@ -171,11 +171,11 @@ All colors MUST be HSL.
   }
 
   .light .gradient-text {
-    background: linear-gradient(135deg, hsl(190 100% 45%), hsl(280 90% 62%));
+    background: linear-gradient(135deg, hsl(280 85% 55%), hsl(190 95% 50%));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    filter: drop-shadow(0 0 15px hsl(190 100% 45% / 0.3));
+    filter: drop-shadow(0 0 20px hsl(280 85% 55% / 0.35));
   }
 
   .hover-lift {
