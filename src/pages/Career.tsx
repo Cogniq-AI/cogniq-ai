@@ -272,8 +272,8 @@ const Career = () => {
                       </Badge>
                     )}
                   </div>
-                  <Button variant="outline" className="w-full border-primary text-primary hover:bg-primary/10 hover:scale-105 transition-all">
-                    {t('career.positions.details')}
+                  <Button variant="info" className="w-full relative z-10">
+                    <span className="relative z-10">{t('career.positions.details')}</span>
                   </Button>
                 </CardContent>
               </Card>

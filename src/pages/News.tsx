@@ -128,9 +128,9 @@ const News = () => {
                       <User className="h-4 w-4 mr-1" />
                       {item.author} • {item.readTime} read
                     </div>
-                    <Button className="bg-primary hover:bg-primary/90 text-primary-foreground group hover:scale-105 transition-all">
-                      Lees meer
-                      <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                    <Button variant="info" className="group/btn relative z-10">
+                      <span className="relative z-10">Lees meer</span>
+                      <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover/btn:translate-x-1 relative z-10" />
                     </Button>
                   </div>
                 </CardContent>
@@ -168,9 +168,9 @@ const News = () => {
                   </div>
                   <span className="text-sm text-muted-foreground">{item.readTime}</span>
                 </div>
-                <Button variant="ghost" className="w-full mt-4 text-primary hover:text-primary/80 group hover:scale-105 transition-all">
-                  Lees meer
-                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                <Button variant="info" className="w-full mt-4 group/btn relative z-10">
+                  <span className="relative z-10">Lees meer</span>
+                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover/btn:translate-x-1 relative z-10" />
                 </Button>
               </CardContent>
             </Card>

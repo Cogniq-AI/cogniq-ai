@@ -100,7 +100,7 @@ const Services = () => {
                       </div>
                     ))}
                   </div>
-                  <Button variant="ghost" className="text-primary hover:text-primary/80 p-0 hover:scale-105 transition-all">
+                  <Button variant="info" className="relative z-10">
                     {t('services.more')}
                   </Button>
                 </CardContent>

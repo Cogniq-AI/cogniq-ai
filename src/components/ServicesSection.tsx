@@ -84,11 +84,12 @@ const ServicesSection = () => {
                   </CardDescription>
                   <Button 
                     asChild 
-                    variant="ghost" 
-                    className="p-0 h-auto text-primary hover:text-primary/80 group-hover:translate-x-1 transition-transform"
+                    variant="info" 
+                    className="relative z-10 group/btn"
                   >
                     <Link to={service.link}>
-                      {t('services.more')} →
+                      <span className="relative z-10">{t('services.more')}</span>
+                      <span className="ml-1 inline-block transition-transform group-hover/btn:translate-x-1 relative z-10">→</span>
                     </Link>
                   </Button>
                 </CardContent>

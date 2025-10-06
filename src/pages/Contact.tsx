@@ -249,8 +249,8 @@ const Contact = () => {
             </div>
           </div>
           <div className="mt-8">
-            <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary/10 hover:scale-105 transition-all">
-              Meer veelgestelde vragen
+            <Button size="lg" variant="info" className="relative z-10">
+              <span className="relative z-10">Meer veelgestelde vragen</span>
             </Button>
           </div>
         </div>
