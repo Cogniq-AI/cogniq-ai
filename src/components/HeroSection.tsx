@@ -15,12 +15,16 @@ const HeroSection = () => {
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="max-w-4xl mx-auto">
-          <h1 className="hero-text mb-6 animate-slide-up">
-            {t('hero.title.ai')}
-            <br />
-            <span className="gradient-text animate-glow">{t('hero.title.transformation')}</span>,
-            <br />
-            {t('hero.title.now')}
+          <h1 className="mb-6 animate-slide-up">
+            <span className="block text-5xl md:text-7xl lg:text-9xl font-black tracking-tighter hero-text mb-4">
+              {t('hero.title.ai')}
+            </span>
+            <span className="block text-6xl md:text-8xl lg:text-10xl font-black tracking-tight gradient-text animate-glow leading-none my-6">
+              {t('hero.title.transformation')}
+            </span>
+            <span className="block text-4xl md:text-6xl lg:text-7xl font-light tracking-widest hero-text opacity-90 mt-4">
+              {t('hero.title.now')}
+            </span>
           </h1>
           
           <p className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto leading-relaxed text-neutral-50 animate-slide-up" style={{ animationDelay: '0.2s' }}>
