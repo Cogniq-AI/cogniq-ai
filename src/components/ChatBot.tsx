@@ -164,12 +164,6 @@ export default function ChatBot() {
                   >
                     <p className="text-sm leading-relaxed">{message.text}</p>
                   </div>
-                  {/* Speech bubble tail */}
-                  {message.sender === "user" ? (
-                    <div className="absolute -right-1 bottom-2 w-3 h-3 bg-accent rotate-45 rounded-br-sm" />
-                  ) : (
-                    <div className="absolute -left-1 bottom-2 w-3 h-3 bg-muted/50 rotate-45 rounded-bl-sm" />
-                  )}
                 </div>
               </div>
             ))}
