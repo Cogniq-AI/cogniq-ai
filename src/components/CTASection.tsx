@@ -3,6 +3,7 @@ import { ArrowRight, MessageCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 import aiNetworkImage from "@/assets/ai-network-hero.jpg";
 import { useLanguage } from "@/contexts/LanguageContext";
+import AnimatedGrid from "./AnimatedGrid";
 
 const CTASection = () => {
   const { t } = useLanguage();
@@ -10,7 +11,7 @@ const CTASection = () => {
   return (
     <section className="py-20 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="relative overflow-hidden rounded-3xl shadow-card">
+        <div className="relative overflow-hidden rounded-3xl shadow-card hover:shadow-glow transition-all duration-500">
           {/* Background Image */}
           <div className="absolute inset-0">
             <img
@@ -21,23 +22,26 @@ const CTASection = () => {
             <div className="absolute inset-0 hero-gradient opacity-90" />
           </div>
 
+          {/* Animated Grid */}
+          <AnimatedGrid />
+
           {/* Content */}
           <div className="relative z-10 px-8 py-16 md:px-16 md:py-24 text-center">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white animate-slide-up">
               {t('cta.title')}
             </h2>
-            <h3 className="text-2xl md:text-3xl font-semibold mb-8 gradient-text">
+            <h3 className="text-2xl md:text-3xl font-semibold mb-8 gradient-text animate-glow" style={{ animationDelay: '0.1s' }}>
               {t('cta.subtitle')}
             </h3>
-            <p className="text-xl text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-xl text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed animate-slide-up" style={{ animationDelay: '0.2s' }}>
               {t('cta.description')}
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-slide-up" style={{ animationDelay: '0.3s' }}>
               <Button 
                 asChild
                 size="lg" 
-                className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-glow group text-lg px-8 py-4"
+                className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-glow group text-lg px-8 py-4 hover:scale-105 transition-all"
               >
                 <Link to="/contact">
                   <MessageCircle className="mr-2 h-5 w-5" />
@@ -50,7 +54,7 @@ const CTASection = () => {
                 asChild
                 size="lg" 
                 variant="outline"
-                className="border-white/30 text-black hover:bg-white/10 hover:text-white backdrop-blur-sm text-lg px-8 py-4"
+                className="border-white/30 text-white hover:bg-white/10 hover:text-white backdrop-blur-sm text-lg px-8 py-4 hover:scale-105 transition-all"
               >
                 <Link to="/projecten">
                   {t('cta.projects')}
@@ -59,7 +63,7 @@ const CTASection = () => {
             </div>
 
             {/* Contact info */}
-            <div className="mt-12 pt-8 border-t border-white/20">
+            <div className="mt-12 pt-8 border-t border-white/20 animate-slide-up" style={{ animationDelay: '0.4s' }}>
               <p className="text-white/80 mb-2">
                 {t('cta.call')}
               </p>

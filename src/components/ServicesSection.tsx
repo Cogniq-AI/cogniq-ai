@@ -64,27 +64,31 @@ const ServicesSection = () => {
             return (
               <Card 
                 key={index}
-                className="card-gradient shadow-card transition-smooth hover:shadow-glow group cursor-pointer border-border/50"
+                className="card-gradient shadow-card transition-smooth hover:shadow-glow group cursor-pointer border-border/50 hover-lift tech-border animate-scale-in overflow-hidden relative"
+                style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <CardHeader>
-                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-smooth">
-                    <IconComponent className="h-6 w-6 text-primary" />
+                {/* Animated background */}
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                
+                <CardHeader className="relative z-10">
+                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-smooth group-hover:scale-110 group-hover:rotate-3">
+                    <IconComponent className="h-6 w-6 text-primary group-hover:animate-pulse" />
                   </div>
                   <CardTitle className="text-xl font-semibold">
                     {t(service.titleKey)}
                   </CardTitle>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="relative z-10">
                   <CardDescription className="text-muted-foreground mb-4 leading-relaxed">
                     {t(service.descriptionKey)}
                   </CardDescription>
                   <Button 
                     asChild 
                     variant="ghost" 
-                    className="p-0 h-auto text-primary hover:text-primary/80"
+                    className="p-0 h-auto text-primary hover:text-primary/80 group-hover:translate-x-1 transition-transform"
                   >
                     <Link to={service.link}>
-                      {t('services.more')}
+                      {t('services.more')} →
                     </Link>
                   </Button>
                 </CardContent>
