@@ -125,7 +125,7 @@ export default function ChatBot() {
             : 'scale-0 opacity-0 pointer-events-none'
         )}
       >
-        <div className="w-[380px] h-[600px] rounded-2xl backdrop-blur-2xl bg-background/80 border border-border/50 shadow-elegant overflow-hidden flex flex-col">
+        <div className="w-[380px] h-[600px] rounded-2xl backdrop-blur-2xl bg-background/65 border border-border/50 shadow-elegant overflow-hidden flex flex-col">
           {/* Header */}
           <div className="relative p-4 border-b border-border/50 bg-gradient-to-r from-primary/10 via-accent/10 to-primary/10">
             <div className="flex items-center justify-between">
@@ -166,15 +166,23 @@ export default function ChatBot() {
                   message.sender === 'user' ? 'justify-end' : 'justify-start'
                 )}
               >
-                <div
-                  className={cn(
-                    'max-w-[75%] rounded-2xl px-4 py-2 backdrop-blur-sm',
-                    message.sender === 'user'
-                      ? 'bg-gradient-to-br from-primary to-accent text-white ml-auto'
-                      : 'bg-muted/50 text-foreground'
+                <div className="relative">
+                  <div
+                    className={cn(
+                      'max-w-[75%] rounded-2xl px-4 py-2 backdrop-blur-sm relative',
+                      message.sender === 'user'
+                        ? 'bg-gradient-to-br from-primary to-accent text-white ml-auto'
+                        : 'bg-muted/50 text-foreground'
+                    )}
+                  >
+                    <p className="text-sm leading-relaxed">{message.text}</p>
+                  </div>
+                  {/* Speech bubble tail */}
+                  {message.sender === 'user' ? (
+                    <div className="absolute -right-1 bottom-2 w-3 h-3 bg-accent rotate-45 rounded-br-sm" />
+                  ) : (
+                    <div className="absolute -left-1 bottom-2 w-3 h-3 bg-muted/50 rotate-45 rounded-bl-sm" />
                   )}
-                >
-                  <p className="text-sm leading-relaxed">{message.text}</p>
                 </div>
               </div>
             ))}
