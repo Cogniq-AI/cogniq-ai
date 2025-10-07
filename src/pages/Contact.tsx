@@ -12,19 +12,19 @@ const Contact = () => {
     {
       icon: MapPin,
       title: "Hoofdkantoor",
-      details: ["Rue de la Science 14", "1040 Brussels", "Belgium"],
+      details: ["Amsterdam", "Nederland"],
       color: "text-blue-500"
     },
     {
       icon: Phone,
       title: "Telefoon",
-      details: ["+32 2 123 45 67", "+32 2 123 45 68"],
+      details: ["+31 6 12345678"],
       color: "text-green-500"
     },
     {
       icon: Mail,
       title: "E-mail",
-      details: ["info@cogniq-ai.com", "sales@cogniq-ai.com"],
+      details: ["hello@cogniqai.nl"],
       color: "text-purple-500"
     },
     {
@@ -37,16 +37,10 @@ const Contact = () => {
 
   const offices = [
     {
-      city: "Brussels",
-      address: "Rue de la Science 14, 1040 Brussels",
+      city: "Amsterdam",
+      address: "Amsterdam, Nederland",
       type: "Hoofdkantoor",
-      description: "Ons hoofdkantoor in het hart van de Europese hoofdstad"
-    },
-    {
-      city: "Antwerp",
-      address: "Schoenmarkt 1, 2000 Antwerp",
-      type: "Vestiging",
-      description: "Onze nieuwe vestiging in de haven van Antwerpen"
+      description: "Ons hoofdkantoor in het hart van Amsterdam"
     }
   ];
 
