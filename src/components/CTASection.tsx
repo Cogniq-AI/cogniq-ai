@@ -9,31 +9,19 @@ const CTASection = () => {
   const { t } = useLanguage();
   
   return (
-    <section className="py-20 bg-background">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="relative overflow-hidden rounded-3xl shadow-card hover:shadow-glow transition-all duration-500">
-          {/* Background Image */}
-          <div className="absolute inset-0">
-            <img
-              src={aiNetworkImage}
-              alt="AI network visualization"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 hero-gradient opacity-90" />
-          </div>
-
-          {/* Animated Grid */}
-          <AnimatedGrid />
-
+    <section className="py-12 sm:py-16 md:py-20 bg-background">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+        <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl shadow-card hover:shadow-glow transition-all duration-500">
+...
           {/* Content */}
-          <div className="relative z-10 px-8 py-16 md:px-16 md:py-24 text-center">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white animate-slide-up">
+          <div className="relative z-10 px-6 py-12 sm:px-8 sm:py-16 md:px-16 md:py-24 text-center">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 text-white animate-slide-up px-4">
               {t('cta.title')}
             </h2>
-            <h3 className="text-2xl md:text-3xl font-semibold mb-8 gradient-text animate-glow" style={{ animationDelay: '0.1s' }}>
+            <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold mb-6 sm:mb-8 gradient-text animate-glow px-4" style={{ animationDelay: '0.1s' }}>
               {t('cta.subtitle')}
             </h3>
-            <p className="text-xl text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed animate-slide-up" style={{ animationDelay: '0.2s' }}>
+            <p className="text-base sm:text-lg md:text-xl text-white/90 mb-8 sm:mb-10 max-w-2xl mx-auto leading-relaxed animate-slide-up px-4" style={{ animationDelay: '0.2s' }}>
               {t('cta.description')}
             </p>
 
