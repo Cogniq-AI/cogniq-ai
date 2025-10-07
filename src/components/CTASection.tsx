@@ -12,7 +12,15 @@ const CTASection = () => {
     <section className="py-12 sm:py-16 md:py-20 bg-background">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl shadow-card hover:shadow-glow transition-all duration-500">
-...
+          {/* Background */}
+          <div className="absolute inset-0 bg-gradient-to-br from-background via-primary/5 to-accent/5">
+            <AnimatedGrid />
+            <div 
+              className="absolute inset-0 bg-cover bg-center opacity-10" 
+              style={{ backgroundImage: `url(${aiNetworkImage})` }}
+            />
+          </div>
+          
           {/* Content */}
           <div className="relative z-10 px-6 py-12 sm:px-8 sm:py-16 md:px-16 md:py-24 text-center">
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 text-white animate-slide-up px-4">
