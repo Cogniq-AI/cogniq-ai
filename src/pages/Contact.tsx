@@ -6,7 +6,6 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { MapPin, Phone, Mail, Clock, Send } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-import emailjs from '@emailjs/browser';
 
 import Footer from "@/components/Footer";
 
@@ -45,27 +44,11 @@ const Contact = () => {
 
     setIsSubmitting(true);
 
-    try {
-      // EmailJS configuration
-      const serviceId = "YOUR_SERVICE_ID"; // Replace with your EmailJS service ID
-      const templateId = "YOUR_TEMPLATE_ID"; // Replace with your EmailJS template ID
-      const publicKey = "YOUR_PUBLIC_KEY"; // Replace with your EmailJS public key
-
-      const templateParams = {
-        to_email: "hello@cogniqai.nl",
-        from_name: `${formData.firstName} ${formData.lastName}`,
-        from_email: formData.email,
-        company: formData.company,
-        phone: formData.phone || "Niet opgegeven",
-        subject: formData.subject || "Algemene vraag",
-        message: formData.message,
-      };
-
-      await emailjs.send(serviceId, templateId, templateParams, publicKey);
-
+    // Simulate form submission
+    setTimeout(() => {
       toast({
-        title: "Bericht verzonden!",
-        description: "We nemen binnen 24 uur contact met u op.",
+        title: "Formulier ingediend",
+        description: "Neem contact op via hello@cogniqai.nl om uw bericht te versturen.",
       });
 
       // Reset form
@@ -78,16 +61,9 @@ const Contact = () => {
         subject: "",
         message: ""
       });
-    } catch (error) {
-      console.error("Email error:", error);
-      toast({
-        title: "Fout bij verzenden",
-        description: "Er is iets misgegaan. Probeer het opnieuw of neem direct contact op via hello@cogniqai.nl",
-        variant: "destructive",
-      });
-    } finally {
+      
       setIsSubmitting(false);
-    }
+    }, 1000);
   };
   const contactInfo = [
     {
