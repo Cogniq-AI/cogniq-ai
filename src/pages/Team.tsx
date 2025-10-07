@@ -8,67 +8,21 @@ import teamImage from "@/assets/team-collaboration.jpg";
 
 const Team = () => {
   const { t } = useLanguage();
-  const teamMembers = [
-    {
-      name: "Dr. Sarah Johnson",
-      role: "Chief Technology Officer",
-      expertise: ["AI Strategy", "Machine Learning", "Deep Learning"],
-      description: "15+ jaar ervaring in AI-onderzoek en -implementatie"
-    },
-    {
-      name: "Marc Dubois",
-      role: "Lead Data Scientist",
-      expertise: ["Data Science", "Python", "TensorFlow"],
-      description: "Specialist in machine learning algoritmes en data-analyse"
-    },
-    {
-      name: "Elena Rodriguez",
-      role: "Senior Software Engineer",
-      expertise: ["Full-Stack", "Cloud Architecture", "DevOps"],
-      description: "Expert in schaalbare softwareoplossingen en cloud infrastructuur"
-    },
-    {
-      name: "Thomas Mueller",
-      role: "AI Research Director",
-      expertise: ["Computer Vision", "NLP", "Research"],
-      description: "Voormalig onderzoeker met focus op toegepaste AI-innovatie"
-    },
-    {
-      name: "Sophie Laurent",
-      role: "UX/UI Design Lead",
-      expertise: ["User Experience", "Interface Design", "Prototyping"],
-      description: "Specialist in intuïtieve interfaces voor complexe AI-systemen"
-    },
-    {
-      name: "Ahmed Hassan",
-      role: "MLOps Engineer",
-      expertise: ["MLOps", "Kubernetes", "CI/CD"],
-      description: "Expert in productie-gereed maken van ML-modellen"
-    }
-  ];
+  
+  // Generate team members array from translations
+  const teamMembers = Array.from({ length: 6 }, (_, i) => ({
+    name: t(`team.member.${i}.name`),
+    role: t(`team.member.${i}.role`),
+    expertise: Array.from({ length: 3 }, (_, j) => t(`team.member.${i}.skill.${j}`)),
+    description: t(`team.member.${i}.description`)
+  }));
 
-  const departments = [
-    {
-      name: "AI Research & Development",
-      count: "12 experts",
-      description: "Cutting-edge onderzoek en ontwikkeling van AI-algoritmes"
-    },
-    {
-      name: "Software Engineering",
-      count: "15 experts", 
-      description: "Full-stack ontwikkeling en systeemintegratie"
-    },
-    {
-      name: "Data Science & Analytics",
-      count: "10 experts",
-      description: "Data-analyse, visualisatie en business intelligence"
-    },
-    {
-      name: "UX/UI Design",
-      count: "5 experts",
-      description: "Gebruikerservaring en interface design"
-    }
-  ];
+  // Generate departments array from translations
+  const departments = Array.from({ length: 4 }, (_, i) => ({
+    name: t(`team.dept.${i}.name`),
+    count: t(`team.dept.${i}.count`),
+    description: t(`team.dept.${i}.description`)
+  }));
 
   return (
     <>

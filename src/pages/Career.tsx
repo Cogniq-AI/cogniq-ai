@@ -8,58 +8,18 @@ import { useLanguage } from "@/contexts/LanguageContext";
 
 const Career = () => {
   const { t } = useLanguage();
-  const openPositions = [
-    {
-      title: "Senior AI Engineer",
-      department: "AI Research & Development",
-      location: "Brussels, Hybrid",
-      type: "Full-time",
-      salary: "€70.000 - €90.000",
-      description: "We zoeken een ervaren AI Engineer om innovatieve machine learning oplossingen te ontwikkelen voor onze klanten.",
-      requirements: ["5+ jaar ervaring met Python/TensorFlow", "PhD in AI/ML of gerelateerd veld", "Ervaring met cloud platforms"],
-      featured: true
-    },
-    {
-      title: "Full-Stack Developer",
-      department: "Software Engineering",
-      location: "Antwerp, On-site",
-      type: "Full-time",
-      salary: "€55.000 - €75.000",
-      description: "Ontwikkel moderne webapplicaties en integreer AI-functionaliteiten in bestaande systemen.",
-      requirements: ["React/Node.js expertise", "3+ jaar ervaring", "API integration ervaring"],
-      featured: false
-    },
-    {
-      title: "Data Scientist",
-      department: "Data Science & Analytics",
-      location: "Brussels, Remote",
-      type: "Full-time",
-      salary: "€60.000 - €80.000",
-      description: "Analyseer complexe datasets en ontwikkel predictieve modellen voor diverse sectoren.",
-      requirements: ["Python/R expertise", "Statistiek achtergrond", "Business intelligence ervaring"],
-      featured: false
-    },
-    {
-      title: "UX/UI Designer",
-      department: "Design",
-      location: "Brussels, Hybrid",
-      type: "Full-time",
-      salary: "€50.000 - €65.000",
-      description: "Ontwerp intuïtieve interfaces voor AI-gedreven applicaties en complexe data visualisaties.",
-      requirements: ["Figma/Sketch expertise", "User research ervaring", "Portfolio met B2B projecten"],
-      featured: false
-    },
-    {
-      title: "DevOps Engineer",
-      department: "Infrastructure",
-      location: "Remote",
-      type: "Contract",
-      salary: "€400 - €600/dag",
-      description: "Beheer cloud infrastructuur en implementeer CI/CD pipelines voor ML-modellen.",
-      requirements: ["Kubernetes/Docker", "AWS/Azure expertise", "Infrastructure as Code"],
-      featured: false
-    }
-  ];
+  
+  // Generate open positions array from translations
+  const openPositions = Array.from({ length: 5 }, (_, i) => ({
+    title: t(`career.job.${i}.title`),
+    department: t(`career.job.${i}.department`),
+    location: t(`career.job.${i}.location`),
+    type: t(`career.job.${i}.type`),
+    salary: t(`career.job.${i}.salary`),
+    description: t(`career.job.${i}.description`),
+    requirements: Array.from({ length: 3 }, (_, j) => t(`career.job.${i}.req.${j}`)),
+    featured: i === 0
+  }));
 
   const benefits = [
     {

@@ -7,29 +7,16 @@ import { useLanguage } from "@/contexts/LanguageContext";
 const Projects = () => {
   const { t } = useLanguage();
   
-  const projects = [
-    {
-      title: "Controlesysteem voor de bovenleidingen van Brusselse trams",
-      description: "De MIVB, de Brusselse openbaarvervoersmaatschappij, heeft een AI-gestuurd bewakingssysteem geïmplementeerd dat problemen met elektrische leidingen in realtime detecteert, waardoor de betrouwbaarheid en operationele efficiëntie van het tramnetwerk worden verbeterd.",
-      client: "MIVB",
-      category: "Transport & Mobiliteit",
-      tags: ["AI", "Monitoring", "Transport"]
-    },
-    {
-      title: "Onderzoeksinstrument voor de evaluatie van behandelplannen",
-      description: "Ion Beam Applications (IBA) werkte samen met B12 Consulting en de Rijksuniversiteit Groningen aan de ontwikkeling van een open-source platform voor onderzoekers in protontherapie, waardoor behandelplannen efficiënter kunnen worden opgesteld en geëvalueerd.",
-      client: "IBA & RUG",
-      category: "Gezondheidszorg",
-      tags: ["Healthcare", "Research", "Open Source"]
-    },
-    {
-      title: "Fotovoltaïsche installaties bewaken met machine learning",
-      description: "Perpetum, een leider in de energiesector, verbeterde de monitoring van PV-centrales met een datagestuurde oplossing, waardoor de uitvaltijd werd verminderd door detectie van anomalieën en de financiële prestaties werden verbeterd door nauwkeurige voorspellingen van de energieproductie.",
-      client: "Perpetum",
-      category: "Energie",
-      tags: ["Machine Learning", "Energy", "Monitoring"]
-    }
-  ];
+  // Generate projects array from translations
+  const projects = Array.from({ length: 3 }, (_, i) => ({
+    title: t(`project.${i}.title`),
+    description: t(`project.${i}.description`),
+    client: t(`project.${i}.client`),
+    category: t(`project.${i}.category`),
+    tags: i === 0 ? ["AI", "Monitoring", "Transport"] : 
+          i === 1 ? ["Healthcare", "Research", "Open Source"] :
+          ["Machine Learning", "Energy", "Monitoring"]
+  }));
 
   return (
     <div className="min-h-screen">

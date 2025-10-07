@@ -5,26 +5,13 @@ import { useLanguage } from "@/contexts/LanguageContext";
 const TestimonialsSection = () => {
   const { t } = useLanguage();
   
-  const testimonials = [
-    {
-      quote: "De samenwerking met B12 heeft ons echt in staat gesteld om onze interne capaciteit op het gebied van machine learning en datawetenschappen uit te breiden. Ze hebben ons geholpen om deze capaciteit binnen ons team te laten groeien toen we onze traditionele business intelligence probeerden om te zetten naar een meer data-analytics-gedreven team. B12 deed het samen met ons, niet alleen voor ons, en gaf ons inzicht in hoe we dit zelf konden doen.",
-      author: "Rob Roemers",
-      position: "Hoofd gegevensanalyse",
-      company: "MIVB"
-    },
-    {
-      quote: "We hebben met B12 samengewerkt aan verschillende projecten die allemaal succesvol waren, grotendeels dankzij hun inzicht, technische expertise en innovatiecultuur. Ze hebben het opmerkelijke vermogen om te beginnen met een onvolledig idee dat we op tafel leggen, het uit te werken tot zijn volledige potentieel en een product af te leveren dat veel beter is dan het oorspronkelijke concept.",
-      author: "Mats Selen",
-      position: "Professor UIUC",
-      company: "Voorheen Novapta LLC"
-    },
-    {
-      quote: "Dankzij de begeleiding en het advies van B12 kon ons project verder gaan dan de doelstellingen die we aan het begin hadden vooropgesteld. Het B12-team is gedurende het hele project aandachtig gebleven voor onze behoeften en hun vaardigheden hebben ons in staat gesteld een tool te verkrijgen die in de voorste gelederen van de technologie staat en een aanzienlijke toegevoegde waarde heeft voor onze gebruikers.",
-      author: "David Baudrez",
-      position: "CEO",
-      company: "Gespodo"
-    }
-  ];
+  // Generate testimonials array from translations
+  const testimonials = Array.from({ length: 3 }, (_, i) => ({
+    quote: t(`testimonial.${i}.quote`),
+    author: t(`testimonial.${i}.author`),
+    position: t(`testimonial.${i}.position`),
+    company: t(`testimonial.${i}.company`)
+  }));
 
   return (
     <section className="py-12 sm:py-16 md:py-20 bg-background">

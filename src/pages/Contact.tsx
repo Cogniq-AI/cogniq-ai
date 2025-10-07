@@ -11,6 +11,7 @@ import Footer from "@/components/Footer";
 
 const Contact = () => {
   const { toast } = useToast();
+  const { t } = useLanguage();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     firstName: "",
@@ -66,40 +67,25 @@ const Contact = () => {
     }, 1000);
   };
   const contactInfo = [
-    {
-      icon: MapPin,
-      title: "Hoofdkantoor",
-      details: ["Amsterdam", "Nederland"],
-      color: "text-blue-500"
-    },
-    {
-      icon: Phone,
-      title: "Telefoon",
-      details: ["+31 6 12345678"],
-      color: "text-green-500"
-    },
-    {
-      icon: Mail,
-      title: "E-mail",
-      details: ["hello@cogniqai.nl"],
-      color: "text-purple-500"
-    },
-    {
-      icon: Clock,
-      title: "Openingstijden",
-      details: ["Ma-Vr: 9:00-18:00", "Za-Zo: Gesloten"],
-      color: "text-orange-500"
-    }
-  ];
+    { icon: MapPin, color: "text-blue-500" },
+    { icon: Phone, color: "text-green-500" },
+    { icon: Mail, color: "text-purple-500" },
+    { icon: Clock, color: "text-orange-500" }
+  ].map((info, i) => ({
+    icon: info.icon,
+    title: t(`contact.info.${i}.title`),
+    details: i === 3 ? [t(`contact.info.${i}.detail.0`), t(`contact.info.${i}.detail.1`)] :
+             i === 0 ? [t(`contact.info.${i}.detail.0`), t(`contact.info.${i}.detail.1`)] :
+             [t(`contact.info.${i}.detail.0`)],
+    color: info.color
+  }));
 
-  const offices = [
-    {
-      city: "Amsterdam",
-      address: "Amsterdam, Nederland",
-      type: "Hoofdkantoor",
-      description: "Ons hoofdkantoor in het hart van Amsterdam"
-    }
-  ];
+  const offices = [{
+    city: t('contact.office.0.city'),
+    address: t('contact.office.0.address'),
+    type: t('contact.office.0.type'),
+    description: t('contact.office.0.description')
+  }];
 
   return (
     <>

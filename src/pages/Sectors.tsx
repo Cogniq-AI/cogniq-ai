@@ -14,86 +14,22 @@ import publicSectorImage from "@/assets/public-sector.jpg";
 const Sectors = () => {
   const { t } = useLanguage();
   
+  // Generate sectors array from translations
   const sectors = [
-    {
-      icon: Shield,
-      title: "Middelgrote verzekeraars",
-      description: "AI-oplossingen voor risicobeoordeling, fraude detectie en klantservice optimalisatie specifiek voor middelgrote verzekeringsmaatschappijen.",
-      image: insuranceImage,
-      solutions: [
-        "Geautomatiseerde risicobeoordeling",
-        "Fraude detectie systemen",
-        "Klantservice chatbots",
-        "Premieberekening optimalisatie"
-      ],
-      caseStudy: "AI-gedreven risicobeoordeling voor middelgrote verzekeraars"
-    },
-    {
-      icon: Briefcase,
-      title: "Professionele dienstverlening",
-      description: "Automatisering en AI-ondersteuning voor advocatuur, consultancy en boekhouding om efficiëntie te verhogen en kwaliteit te verbeteren.",
-      image: professionalServicesImage,
-      solutions: [
-        "Juridische documenten analyse",
-        "Geautomatiseerde boekhouding",
-        "Consultant rapportage tools",
-        "Client relationship management"
-      ],
-      caseStudy: "Document analyse systeem voor advocatenkantoren"
-    },
-    {
-      icon: Heart,
-      title: "Zorgsector",
-      description: "AI-gedreven oplossingen voor klinieken, zorggroepen en kleinere zorginstellingen (geen ziekenhuizen) voor betere patiëntenzorg.",
-      image: healthcareImage,
-      solutions: [
-        "Patiënt planning optimalisatie",
-        "Medische data analyse",
-        "Behandelplan ondersteuning",
-        "Kwaliteitsbewaking systemen"
-      ],
-      caseStudy: "Patiëntenzorg optimalisatie voor zorggroepen"
-    },
-    {
-      icon: Truck,
-      title: "Logistiek en Douane",
-      description: "Slimme oplossingen voor supply chain optimalisatie, douaneprocedures en transport efficiëntie verbetering.",
-      image: logisticsImage,
-      solutions: [
-        "Route optimalisatie",
-        "Douane documentatie automatisering",
-        "Voorraad management",
-        "Transport planning AI"
-      ],
-      caseStudy: "Supply chain optimalisatie voor logistieke partners"
-    },
-    {
-      icon: Calculator,
-      title: "Belasting optimalisatie voor bedrijven",
-      description: "AI-gedreven belastingoptimalisatie en compliance oplossingen voor bedrijven om fiscale efficiëntie te maximaliseren.",
-      image: taxImage,
-      solutions: [
-        "Belasting planning tools",
-        "Compliance monitoring",
-        "Aftrek optimalisatie",
-        "Fiscale rapportage automatisering"
-      ],
-      caseStudy: "Belastingoptimalisatie systeem voor MKB bedrijven"
-    },
-    {
-      icon: Building,
-      title: "Publieke sector (gemeenten, overheid)",
-      description: "Digitalisering en AI-oplossingen voor overheidsdiensten en gemeentelijke processen. (Later beschikbaar)",
-      image: publicSectorImage,
-      solutions: [
-        "Burger service optimalisatie",
-        "Document verwerking",
-        "Data analyse voor beleid",
-        "Proces automatisering"
-      ],
-      caseStudy: "Binnenkort beschikbaar - Publieke sector projecten"
-    }
-  ];
+    { icon: Shield, image: insuranceImage },
+    { icon: Briefcase, image: professionalServicesImage },
+    { icon: Heart, image: healthcareImage },
+    { icon: Truck, image: logisticsImage },
+    { icon: Calculator, image: taxImage },
+    { icon: Building, image: publicSectorImage }
+  ].map((sector, i) => ({
+    icon: sector.icon,
+    title: t(`sector.${i}.title`),
+    description: t(`sector.${i}.description`),
+    image: sector.image,
+    solutions: Array.from({ length: 4 }, (_, j) => t(`sector.${i}.solution.${j}`)),
+    caseStudy: t(`sector.${i}.caseStudy`)
+  }));
 
   return (
     <>

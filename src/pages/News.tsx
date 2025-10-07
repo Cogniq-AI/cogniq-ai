@@ -4,64 +4,21 @@ import { Badge } from "@/components/ui/badge";
 import { Calendar, User, ArrowRight } from "lucide-react";
 
 import Footer from "@/components/Footer";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const News = () => {
-  const newsItems = [
-    {
-      title: "B12 Consulting breidt AI-expertise uit met nieuwe partnerships",
-      excerpt: "Nieuwe samenwerkingen met toonaangevende technologiepartners versterken onze capaciteit om innovatieve AI-oplossingen te leveren.",
-      date: "15 maart 2024",
-      author: "Sarah Johnson",
-      category: "Partnership",
-      readTime: "3 min",
-      featured: true
-    },
-    {
-      title: "Succesvolle implementatie van AI-monitoring systeem voor MIVB",
-      excerpt: "Het nieuwe bewakingssysteem voor bovenleidingen verhoogt de betrouwbaarheid van het Brusselse tramnetwerk aanzienlijk.",
-      date: "28 februari 2024",
-      author: "Marc Dubois",
-      category: "Case Study",
-      readTime: "5 min",
-      featured: false
-    },
-    {
-      title: "B12 wint AI Innovation Award 2024",
-      excerpt: "Onze innovatieve aanpak in healthcare AI wordt erkend met prestigieuze industrie award.",
-      date: "12 februari 2024",
-      author: "Elena Rodriguez",
-      category: "Award",
-      readTime: "2 min",
-      featured: false
-    },
-    {
-      title: "Nieuwe kantooropening in Antwerpen",
-      excerpt: "Uitbreiding van ons team en dienstverlening met een nieuwe vestiging in het hart van de Vlaamse technologie-hub.",
-      date: "5 februari 2024",
-      author: "Thomas Mueller",
-      category: "Company News",
-      readTime: "4 min",
-      featured: false
-    },
-    {
-      title: "Gratis AI Workshop Series voor bedrijven",
-      excerpt: "Leer hoe AI uw bedrijfsprocessen kan transformeren in onze nieuwe workshop serie voor Nederlandse en Belgische ondernemers.",
-      date: "20 januari 2024",
-      author: "Sophie Laurent",
-      category: "Event",
-      readTime: "3 min",
-      featured: false
-    },
-    {
-      title: "Onderzoeksresultaten gepubliceerd in Nature AI",
-      excerpt: "Ons onderzoek naar ethische AI-implementatie wordt internationaal erkend en gepubliceerd in toonaangevend wetenschappelijk tijdschrift.",
-      date: "8 januari 2024",
-      author: "Ahmed Hassan",
-      category: "Research",
-      readTime: "6 min",
-      featured: false
-    }
-  ];
+  const { t } = useLanguage();
+  
+  // Generate news items array from translations
+  const newsItems = Array.from({ length: 6 }, (_, i) => ({
+    title: t(`news.item.${i}.title`),
+    excerpt: t(`news.item.${i}.excerpt`),
+    date: t(`news.item.${i}.date`),
+    author: t(`news.item.${i}.author`),
+    category: t(`news.item.${i}.category`),
+    readTime: t(`news.item.${i}.readTime`),
+    featured: i === 0
+  }));
 
   const categories = ["All", "Partnership", "Case Study", "Award", "Company News", "Event", "Research"];
 
