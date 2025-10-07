@@ -7,6 +7,7 @@ import { LanguageProvider } from "@/contexts/LanguageContext";
 import Navigation from "./components/Navigation";
 import ScrollToTop from "./components/ScrollToTop";
 import Footer from "./components/Footer";
+import ChatBot from "./components/ChatBot";
 import Index from "./pages/Index";
 import Projects from "./pages/Projects";
 import Services from "./pages/Services";
@@ -42,6 +43,7 @@ const App = () => (
               <Route path="*" element={<NotFound />} />
             </Routes>
           </main>
+          <ChatBot />
         </BrowserRouter>
       </TooltipProvider>
     </LanguageProvider>
