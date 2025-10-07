@@ -1,13 +1,94 @@
+import { useState } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { MapPin, Phone, Mail, Clock, Send } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
+import emailjs from '@emailjs/browser';
 
 import Footer from "@/components/Footer";
 
 const Contact = () => {
+  const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    company: "",
+    phone: "",
+    subject: "",
+    message: ""
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.id]: e.target.value
+    });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    // Basic validation
+    if (!formData.firstName || !formData.lastName || !formData.email || !formData.message) {
+      toast({
+        title: "Vereiste velden ontbreken",
+        description: "Vul alle verplichte velden in.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      // EmailJS configuration
+      const serviceId = "YOUR_SERVICE_ID"; // Replace with your EmailJS service ID
+      const templateId = "YOUR_TEMPLATE_ID"; // Replace with your EmailJS template ID
+      const publicKey = "YOUR_PUBLIC_KEY"; // Replace with your EmailJS public key
+
+      const templateParams = {
+        to_email: "hello@cogniqai.nl",
+        from_name: `${formData.firstName} ${formData.lastName}`,
+        from_email: formData.email,
+        company: formData.company,
+        phone: formData.phone || "Niet opgegeven",
+        subject: formData.subject || "Algemene vraag",
+        message: formData.message,
+      };
+
+      await emailjs.send(serviceId, templateId, templateParams, publicKey);
+
+      toast({
+        title: "Bericht verzonden!",
+        description: "We nemen binnen 24 uur contact met u op.",
+      });
+
+      // Reset form
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        company: "",
+        phone: "",
+        subject: "",
+        message: ""
+      });
+    } catch (error) {
+      console.error("Email error:", error);
+      toast({
+        title: "Fout bij verzenden",
+        description: "Er is iets misgegaan. Probeer het opnieuw of neem direct contact op via hello@cogniqai.nl",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
   const contactInfo = [
     {
       icon: MapPin,
@@ -69,89 +150,114 @@ const Contact = () => {
                 Vertel ons over uw uitdaging en wij nemen binnen 24 uur contact met u op.
               </CardDescription>
             </CardHeader>
-            <CardContent className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <CardContent>
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="space-y-2">
+                    <Label htmlFor="firstName">Voornaam *</Label>
+                    <Input 
+                      id="firstName" 
+                      placeholder="John"
+                      value={formData.firstName}
+                      onChange={handleChange}
+                      required
+                      className="bg-input border-border focus:border-primary"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="lastName">Achternaam *</Label>
+                    <Input 
+                      id="lastName" 
+                      placeholder="Doe"
+                      value={formData.lastName}
+                      onChange={handleChange}
+                      required
+                      className="bg-input border-border focus:border-primary"
+                    />
+                  </div>
+                </div>
+                
                 <div className="space-y-2">
-                  <Label htmlFor="firstName">Voornaam</Label>
+                  <Label htmlFor="email">E-mail *</Label>
                   <Input 
-                    id="firstName" 
-                    placeholder="John"
+                    id="email" 
+                    type="email" 
+                    placeholder="john@company.com"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
                     className="bg-input border-border focus:border-primary"
                   />
                 </div>
+                
                 <div className="space-y-2">
-                  <Label htmlFor="lastName">Achternaam</Label>
+                  <Label htmlFor="company">Bedrijf</Label>
                   <Input 
-                    id="lastName" 
-                    placeholder="Doe"
+                    id="company" 
+                    placeholder="Uw bedrijfsnaam"
+                    value={formData.company}
+                    onChange={handleChange}
                     className="bg-input border-border focus:border-primary"
                   />
                 </div>
-              </div>
-              
-              <div className="space-y-2">
-                <Label htmlFor="email">E-mail</Label>
-                <Input 
-                  id="email" 
-                  type="email" 
-                  placeholder="john@company.com"
-                  className="bg-input border-border focus:border-primary"
-                />
-              </div>
-              
-              <div className="space-y-2">
-                <Label htmlFor="company">Bedrijf</Label>
-                <Input 
-                  id="company" 
-                  placeholder="Uw bedrijfsnaam"
-                  className="bg-input border-border focus:border-primary"
-                />
-              </div>
-              
-              <div className="space-y-2">
-                <Label htmlFor="phone">Telefoon (optioneel)</Label>
-                <Input 
-                  id="phone" 
-                  type="tel" 
-                  placeholder="+32 2 123 45 67"
-                  className="bg-input border-border focus:border-primary"
-                />
-              </div>
-              
-              <div className="space-y-2">
-                <Label htmlFor="subject">Onderwerp</Label>
-                <select 
-                  id="subject"
-                  className="w-full px-3 py-2 bg-input border border-border rounded-md text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
+                
+                <div className="space-y-2">
+                  <Label htmlFor="phone">Telefoon (optioneel)</Label>
+                  <Input 
+                    id="phone" 
+                    type="tel" 
+                    placeholder="+31 6 12345678"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    className="bg-input border-border focus:border-primary"
+                  />
+                </div>
+                
+                <div className="space-y-2">
+                  <Label htmlFor="subject">Onderwerp</Label>
+                  <select 
+                    id="subject"
+                    value={formData.subject}
+                    onChange={handleChange}
+                    className="w-full px-3 py-2 bg-input border border-border rounded-md text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
+                  >
+                    <option value="">Selecteer een onderwerp</option>
+                    <option value="AI-oplossingen">AI-oplossingen</option>
+                    <option value="Software ontwikkeling">Software ontwikkeling</option>
+                    <option value="Data engineering">Data engineering</option>
+                    <option value="Consultancy">Consultancy</option>
+                    <option value="Partnership">Partnership</option>
+                    <option value="Anders">Anders</option>
+                  </select>
+                </div>
+                
+                <div className="space-y-2">
+                  <Label htmlFor="message">Bericht *</Label>
+                  <Textarea 
+                    id="message" 
+                    placeholder="Vertel ons over uw project of uitdaging..."
+                    rows={5}
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
+                    className="bg-input border-border focus:border-primary resize-none"
+                  />
+                </div>
+                
+                <Button 
+                  type="submit" 
+                  size="lg" 
+                  disabled={isSubmitting}
+                  className="w-full bg-primary hover:bg-primary/90 text-primary-foreground shadow-glow group hover:scale-105 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  <option value="">Selecteer een onderwerp</option>
-                  <option value="ai-solutions">AI-oplossingen</option>
-                  <option value="software-development">Software ontwikkeling</option>
-                  <option value="data-engineering">Data engineering</option>
-                  <option value="consulting">Consultancy</option>
-                  <option value="partnership">Partnership</option>
-                  <option value="other">Anders</option>
-                </select>
-              </div>
-              
-              <div className="space-y-2">
-                <Label htmlFor="message">Bericht</Label>
-                <Textarea 
-                  id="message" 
-                  placeholder="Vertel ons over uw project of uitdaging..."
-                  rows={5}
-                  className="bg-input border-border focus:border-primary resize-none"
-                />
-              </div>
-              
-              <Button size="lg" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground shadow-glow group hover:scale-105 transition-all">
-                <Send className="mr-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-                Verstuur bericht
-              </Button>
-              
-              <p className="text-sm text-muted-foreground text-center">
-                We respecteren uw privacy. Uw gegevens worden niet gedeeld met derden.
-              </p>
+                  <Send className="mr-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                  {isSubmitting ? "Verzenden..." : "Verstuur bericht"}
+                </Button>
+                
+                <p className="text-sm text-muted-foreground text-center">
+                  We respecteren uw privacy. Uw gegevens worden niet gedeeld met derden.
+                </p>
+              </form>
             </CardContent>
           </Card>
 
