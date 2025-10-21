@@ -8,45 +8,45 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Dark Theme - Based on Cogniq AI Logo */
-    --background: 230 40% 7%;
-    --foreground: 210 40% 98%;
+    /* Dark Theme - Neutral Colors */
+    --background: 0 0% 8%;
+    --foreground: 0 0% 98%;
 
-    --card: 230 35% 10%;
-    --card-foreground: 210 40% 98%;
+    --card: 0 0% 12%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 230 35% 10%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 0 0% 12%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 190 95% 55%;
-    --primary-foreground: 230 40% 7%;
+    --primary: 0 0% 60%;
+    --primary-foreground: 0 0% 98%;
 
-    --secondary: 280 85% 65%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 0 0% 20%;
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 230 30% 14%;
-    --muted-foreground: 215 20% 65%;
+    --muted: 0 0% 16%;
+    --muted-foreground: 0 0% 65%;
 
-    --accent: 280 85% 65%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 0 0% 25%;
+    --accent-foreground: 0 0% 98%;
 
     --destructive: 0 70% 55%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 230 30% 18%;
-    --input: 230 30% 14%;
-    --ring: 190 95% 55%;
+    --border: 0 0% 20%;
+    --input: 0 0% 16%;
+    --ring: 0 0% 60%;
 
     --radius: 0.75rem;
 
-    /* Cogniq AI Custom Design Tokens */
-    --hero-gradient: linear-gradient(135deg, hsl(230 40% 7% / 0.95), hsl(230 35% 10% / 0.92), hsl(280 40% 15% / 0.9));
-    --tech-gradient: linear-gradient(90deg, hsl(190 95% 55% / 0.15), hsl(280 85% 65% / 0.15));
-    --card-gradient: linear-gradient(145deg, hsl(230 35% 10%), hsl(230 30% 12%));
+    /* Neutral Design Tokens */
+    --hero-gradient: linear-gradient(135deg, hsl(0 0% 8% / 0.95), hsl(0 0% 12% / 0.92), hsl(0 0% 15% / 0.9));
+    --tech-gradient: linear-gradient(90deg, hsl(0 0% 60% / 0.15), hsl(0 0% 50% / 0.15));
+    --card-gradient: linear-gradient(145deg, hsl(0 0% 12%), hsl(0 0% 14%));
     
-    --shadow-glow: 0 8px 30px hsl(190 95% 55% / 0.15);
-    --shadow-card: 0 10px 40px hsl(230 40% 7% / 0.6);
-    --shadow-intense: 0 0 80px hsl(190 95% 55% / 0.4), 0 0 40px hsl(280 85% 65% / 0.3);
+    --shadow-glow: 0 8px 30px hsl(0 0% 0% / 0.3);
+    --shadow-card: 0 10px 40px hsl(0 0% 0% / 0.6);
+    --shadow-intense: 0 0 80px hsl(0 0% 60% / 0.2), 0 0 40px hsl(0 0% 50% / 0.15);
     
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     
@@ -54,53 +54,53 @@ All colors MUST be HSL.
     --font-display: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 
-    --sidebar-background: 230 35% 10%;
-    --sidebar-foreground: 210 40% 98%;
-    --sidebar-primary: 190 95% 55%;
-    --sidebar-primary-foreground: 230 40% 7%;
-    --sidebar-accent: 230 30% 14%;
-    --sidebar-accent-foreground: 210 40% 98%;
-    --sidebar-border: 230 30% 18%;
-    --sidebar-ring: 190 95% 55%;
+    --sidebar-background: 0 0% 12%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 0 0% 60%;
+    --sidebar-primary-foreground: 0 0% 8%;
+    --sidebar-accent: 0 0% 16%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 0 0% 20%;
+    --sidebar-ring: 0 0% 60%;
   }
 
   .light {
-    /* Light Theme - Based on Cogniq AI Logo */
+    /* Light Theme - Neutral Colors */
     --background: 0 0% 100%;
-    --foreground: 230 50% 20%;
+    --foreground: 0 0% 10%;
 
-    --card: 210 40% 96%;
-    --card-foreground: 230 50% 20%;
+    --card: 0 0% 97%;
+    --card-foreground: 0 0% 10%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 230 50% 20%;
+    --popover-foreground: 0 0% 10%;
 
-    --primary: 280 85% 55%;
+    --primary: 0 0% 40%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 190 95% 50%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 0 0% 90%;
+    --secondary-foreground: 0 0% 10%;
 
-    --muted: 210 35% 93%;
-    --muted-foreground: 230 30% 45%;
+    --muted: 0 0% 94%;
+    --muted-foreground: 0 0% 45%;
 
-    --accent: 280 90% 92%;
-    --accent-foreground: 280 85% 40%;
+    --accent: 0 0% 93%;
+    --accent-foreground: 0 0% 15%;
 
     --destructive: 0 75% 52%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 210 30% 88%;
-    --input: 210 35% 94%;
-    --ring: 280 85% 55%;
+    --border: 0 0% 88%;
+    --input: 0 0% 94%;
+    --ring: 0 0% 40%;
 
-    --hero-gradient: linear-gradient(135deg, hsl(0 0% 100%), hsl(210 40% 98%), hsl(280 60% 98%));
-    --tech-gradient: linear-gradient(90deg, hsl(280 85% 55% / 0.08), hsl(190 95% 50% / 0.06));
-    --card-gradient: linear-gradient(145deg, hsl(210 40% 96%), hsl(210 35% 98%));
+    --hero-gradient: linear-gradient(135deg, hsl(0 0% 100%), hsl(0 0% 98%), hsl(0 0% 96%));
+    --tech-gradient: linear-gradient(90deg, hsl(0 0% 40% / 0.08), hsl(0 0% 50% / 0.06));
+    --card-gradient: linear-gradient(145deg, hsl(0 0% 97%), hsl(0 0% 98%));
     
-    --shadow-glow: 0 8px 30px hsl(280 85% 55% / 0.2);
-    --shadow-card: 0 4px 20px hsl(230 30% 50% / 0.1);
-    --shadow-intense: 0 0 60px hsl(280 85% 55% / 0.4), 0 0 30px hsl(190 95% 50% / 0.25);
+    --shadow-glow: 0 8px 30px hsl(0 0% 0% / 0.1);
+    --shadow-card: 0 4px 20px hsl(0 0% 0% / 0.08);
+    --shadow-intense: 0 0 60px hsl(0 0% 40% / 0.2), 0 0 30px hsl(0 0% 50% / 0.15);
   }
 }
 
@@ -182,35 +182,35 @@ All colors MUST be HSL.
   
   .hero-text {
     @apply text-6xl md:text-7xl lg:text-8xl font-black tracking-tight leading-none;
-    background: linear-gradient(135deg, hsl(var(--foreground)), hsl(190 95% 60%), hsl(280 85% 70%));
+    background: linear-gradient(135deg, hsl(var(--foreground)), hsl(0 0% 80%), hsl(0 0% 60%));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    text-shadow: 0 0 40px hsl(190 95% 55% / 0.4);
+    text-shadow: 0 0 40px hsl(0 0% 60% / 0.2);
   }
   
   .light .hero-text {
-    background: linear-gradient(135deg, hsl(230 50% 20%), hsl(280 85% 50%), hsl(190 95% 45%));
+    background: linear-gradient(135deg, hsl(0 0% 10%), hsl(0 0% 30%), hsl(0 0% 40%));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    text-shadow: 0 0 30px hsl(280 85% 55% / 0.4);
+    text-shadow: 0 0 30px hsl(0 0% 40% / 0.1);
   }
   
   .gradient-text {
-    background: linear-gradient(135deg, hsl(190 95% 55%), hsl(280 85% 65%));
+    background: linear-gradient(135deg, hsl(0 0% 60%), hsl(0 0% 50%));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    filter: drop-shadow(0 0 10px hsl(190 95% 55% / 0.15));
+    filter: drop-shadow(0 0 10px hsl(0 0% 60% / 0.1));
   }
 
   .light .gradient-text {
-    background: linear-gradient(135deg, hsl(280 85% 55%), hsl(190 95% 50%));
+    background: linear-gradient(135deg, hsl(0 0% 40%), hsl(0 0% 50%));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    filter: drop-shadow(0 0 10px hsl(280 85% 55% / 0.2));
+    filter: drop-shadow(0 0 10px hsl(0 0% 40% / 0.1));
   }
 
   .hover-lift {
